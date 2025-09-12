@@ -38,7 +38,7 @@ files_to_find = [
 
 # Process ALL files in these folders (including all nested subfolders)
 # Example: ["app/components/", "src/utils/", "lib/"]
-process_all_files_in_folders = ['src/components/']
+process_all_files_in_folders = ['src/components/legal/', 'src/app/legal/']
 
 # File extensions to include when processing all files in folders
 # Leave empty to include all files, or specify extensions like ['.js', '.jsx', '.ts', '.tsx', '.py']
