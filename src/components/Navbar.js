@@ -349,7 +349,7 @@ export default function Navbar() {
                                         <Link
                                             key={item.href}
                                             href={item.href}
-                                            className="flex items-center space-x-3 px-2 py-3 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
+                                            className="flex items-center space-x-3 px-2 py-0.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
                                             onClick={closeMobileMenu}
                                         >
                                             {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
@@ -363,7 +363,7 @@ export default function Navbar() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="flex items-center space-x-3 px-2 py-3 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
+                                    className="flex items-center space-x-3 px-2 py-0.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
                                     onClick={closeMobileMenu}
                                 >
                                     {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
@@ -440,7 +440,7 @@ export default function Navbar() {
                         </div>
 
                         {/* Mobile CTA Buttons */}
-                        <div className="p-4 border-t border-gray-100 space-y-3">
+                        <div className="p-4 space-y-3">
                             {Object.values(CTA_BUTTONS).map((button) => (
                                 <Link
                                     key={button.href}
