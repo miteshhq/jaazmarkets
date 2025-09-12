@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Globe, Clock, MessageSquare, Building } from 'lucide-react'
 
 export default function GlobalPresence({ data }) {
@@ -40,7 +41,7 @@ export default function GlobalPresence({ data }) {
                             })}
                         </div>
 
-                        <a
+                        <Link
                             href={buttonLink}
                             className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-semibold rounded-lg hover:bg-primary-orange/90 transition-all"
                         >
@@ -48,7 +49,7 @@ export default function GlobalPresence({ data }) {
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="lg:order-2">

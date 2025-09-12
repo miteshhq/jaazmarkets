@@ -1,5 +1,5 @@
-// app/COMMON/SecuritySupport.js
 import React from 'react'
+import Link from 'next/link'
 
 export default function SecuritySupport({ data }) {
     const { heading, description, supportOptions, buttons } = data
@@ -36,7 +36,7 @@ export default function SecuritySupport({ data }) {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         {buttons.map((button, index) => (
-                            <a
+                            <Link
                                 key={index}
                                 href={button.link}
                                 className={`px-8 py-4 rounded-lg font-semibold transition ${button.variant === 'primary'
@@ -45,7 +45,7 @@ export default function SecuritySupport({ data }) {
                                     }`}
                             >
                                 {button.text}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>

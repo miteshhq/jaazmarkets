@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function AvailablePlatforms({ data }) {
     const { heading, description, platforms } = data
@@ -30,7 +31,7 @@ export default function AvailablePlatforms({ data }) {
                                 <p className="text-gray-600  mb-6 text-sm">
                                     {platform.description}
                                 </p>
-                                <a
+                                <Link
                                     href={platform.link}
                                     className="inline-flex items-center text-primary-orange font-medium hover:underline"
                                 >
@@ -38,7 +39,7 @@ export default function AvailablePlatforms({ data }) {
                                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

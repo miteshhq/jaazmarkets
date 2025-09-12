@@ -1,4 +1,3 @@
-// app/COMMON/CybersecurityHero.js
 import React from 'react'
 
 export default function CybersecurityHero({ buttons }) {

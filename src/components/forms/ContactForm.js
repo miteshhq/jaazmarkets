@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { MapPin, Building, Mail, Phone, Clock } from 'lucide-react'
 
 export default function ContactForm({ data }) {
@@ -65,7 +66,7 @@ export default function ContactForm({ data }) {
                                     <div className="flex items-start">
                                         <input type="checkbox" id="privacy" name="privacy" required className="mt-1 rounded border-gray-300 text-primary-orange focus:ring-primary-orange" />
                                         <label htmlFor="privacy" className="ml-3 text-sm text-gray-600 dark:text-gray-300">
-                                            I agree to the <a href="/legal" className="text-primary-orange hover:underline">Privacy Policy</a> and consent to the processing of my personal data. *
+                                            I agree to the <Link href="/legal" className="text-primary-orange hover:underline">Privacy Policy</Link> and consent to the processing of my personal data. *
                                         </label>
                                     </div>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Users, Building, Globe } from 'lucide-react'
 
 const iconMap = {
@@ -54,14 +55,14 @@ export default function PartnershipTypes({ data }) {
                                     ))}
                                 </ul>
 
-                                <a
+                                <Link
                                     href={type.buttonLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`w-full inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition ${type.buttonStyle}`}
                                 >
                                     {type.buttonText}
-                                </a>
+                                </Link>
                             </div>
                         )
                     })}

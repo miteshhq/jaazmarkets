@@ -1,5 +1,5 @@
-// app/COMMON/AccountTypesComparison.js
 import React from 'react'
+import Link from 'next/link'
 import { User, Zap, Star } from 'lucide-react'
 
 const iconMap = {
@@ -89,7 +89,7 @@ export default function AccountTypesComparison({ data }) {
                                     ))}
                                 </ul>
 
-                                <a
+                                <Link
                                     href={account.buttonHref}
                                     target="_blank"
                                     className={`block w-full text-center py-3 px-4 rounded-lg transition font-medium ${account.featured
@@ -98,7 +98,7 @@ export default function AccountTypesComparison({ data }) {
                                         }`}
                                 >
                                     {account.buttonText}
-                                </a>
+                                </Link>
                             </div>
                         )
                     })}

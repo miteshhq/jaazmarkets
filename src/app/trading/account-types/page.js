@@ -17,7 +17,7 @@ const AccountTypesComparisonData = {
             priceLabel: 'Minimum deposit',
             priceColor: 'text-primary-orange',
             iconName: 'User',
-            iconBg: 'bg-blue-100 /30',
+            iconBg: 'bg-blue-100/30',
             iconColor: 'text-blue-600',
             features: [
                 { label: 'Spreads from', value: '1.0 pips' },

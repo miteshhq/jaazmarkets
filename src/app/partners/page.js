@@ -120,7 +120,7 @@ const partnershipTypesData = {
                 'Dedicated support'
             ],
             buttonText: 'Apply Now',
-            buttonLink: '/register-ib',
+            buttonLink: '/register-partner',
             buttonStyle: 'bg-primary-orange text-white hover:bg-primary-orange/90',
             featured: false
         },
@@ -128,7 +128,7 @@ const partnershipTypesData = {
             title: 'White Label',
             badge: 'POPULAR',
             iconName: 'Building',
-            iconBg: 'bg-blue-100 /30',
+            iconBg: 'bg-blue-100/30',
             iconColor: 'text-blue-600',
             features: [
                 'Your own branded platform',
@@ -144,7 +144,7 @@ const partnershipTypesData = {
         {
             title: 'Regional Representative',
             iconName: 'Globe',
-            iconBg: 'bg-green-100 /30',
+            iconBg: 'bg-green-100/30',
             iconColor: 'text-green-600',
             features: [
                 'Exclusive territory rights',

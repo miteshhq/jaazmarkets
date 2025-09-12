@@ -12,13 +12,13 @@ const bannerProps = {
     buttons: [
         {
             text: "Download for Windows",
-            link: "https://download.mql5.com/cdn/web/qorva.markets.ltd/mt5/qorvamarkets5setup.exe",
+            link: "#",
             variant: "primary",
             icon: "arrow"
         },
         {
             text: "Download for macOS",
-            link: "https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip",
+            link: "#",
             variant: "secondary",
             icon: "monitor"
         }
@@ -42,7 +42,7 @@ const DownloadOptionsData = {
             buttonText: 'Download for Windows',
             buttonBg: 'bg-blue-600',
             buttonHover: 'hover:bg-blue-700',
-            downloadUrl: 'https://download.mql5.com/cdn/web/qorva.markets.ltd/mt5/qorvamarkets5setup.exe'
+            downloadUrl: '#'
         },
         {
             platform: 'macOS',
@@ -57,7 +57,7 @@ const DownloadOptionsData = {
             buttonText: 'Download for macOS',
             buttonBg: 'bg-gray-800 ',
             buttonHover: 'hover:bg-gray-900 :bg-gray-700',
-            downloadUrl: 'https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip'
+            downloadUrl: '#'
         }
     ]
 }
@@ -249,13 +249,13 @@ const ctaProps = {
     buttons: [
         {
             text: "Download for Windows",
-            href: "https://download.mql5.com/cdn/web/qorva.markets.ltd/mt5/qorvamarkets5setup.exe",
+            href: "#",
             variant: "primary",
             icon: "download"
         },
         {
             text: "Download for macOS",
-            href: "https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip",
+            href: "#",
             variant: "secondary",
             icon: "download"
         }

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { ChevronDown, User, Zap, Monitor, CreditCard, Shield } from 'lucide-react'
 
@@ -71,7 +72,7 @@ export default function CategoryFAQ({ data }) {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             {contactCTA.buttons.map((button, index) => (
-                                <a
+                                <Link
                                     key={index}
                                     href={button.href}
                                     target={button.target}
@@ -81,7 +82,7 @@ export default function CategoryFAQ({ data }) {
                                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

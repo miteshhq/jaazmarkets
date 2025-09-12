@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Clock, Eye, Zap, Shield } from 'lucide-react'
 
 export default function AboutHero({ data }) {
@@ -76,7 +77,7 @@ export default function AboutHero({ data }) {
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                                 {cta.map((button, index) => (
-                                    <a
+                                    <Link
                                         key={index}
                                         href={button.href}
                                         className={`inline-flex items-center justify-center px-6 py-3 ${button.style} font-bold text-sm rounded-xl transition-all transform hover:scale-105 shadow-lg`}
@@ -85,7 +86,7 @@ export default function AboutHero({ data }) {
                                         <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={button.icon} />
                                         </svg>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

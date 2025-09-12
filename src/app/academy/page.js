@@ -139,7 +139,7 @@ const learningResourcesData = {
             title: 'Trading Glossary',
             description: 'Comprehensive dictionary of trading terms and definitions.',
             iconName: 'BookOpen',
-            iconBg: 'bg-blue-100 /30',
+            iconBg: 'bg-blue-100/30',
             iconColor: 'text-blue-600',
             status: 'Coming Soon'
         },
@@ -147,7 +147,7 @@ const learningResourcesData = {
             title: 'Trading Calculators',
             description: 'Pip, margin, and profit calculators for precise trade planning.',
             iconName: 'Calculator',
-            iconBg: 'bg-green-100 /30',
+            iconBg: 'bg-green-100/30',
             iconColor: 'text-green-600',
             link: '/tools/calculators',
             linkText: 'Use Calculators'
@@ -156,7 +156,7 @@ const learningResourcesData = {
             title: 'Live Webinars',
             description: 'Join our expert traders for live market analysis and Q&A sessions.',
             iconName: 'Video',
-            iconBg: 'bg-purple-100 /30',
+            iconBg: 'bg-purple-100/30',
             iconColor: 'text-purple-600',
             status: 'No Upcoming Webinars'
         },
@@ -164,7 +164,7 @@ const learningResourcesData = {
             title: 'Free eBooks',
             description: 'Download comprehensive trading guides and strategy eBooks.',
             iconName: 'Download',
-            iconBg: 'bg-yellow-100 /30',
+            iconBg: 'bg-yellow-100/30',
             iconColor: 'text-yellow-600',
             status: 'Download Unavailable'
         }

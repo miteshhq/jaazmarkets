@@ -1,4 +1,4 @@
-// app/COMMON/TradingSpreadsTable.js
+import Link from 'next/link'
 import React from 'react'
 
 export default function TradingSpreadsTable({ data }) {
@@ -59,12 +59,12 @@ export default function TradingSpreadsTable({ data }) {
                             <strong>Important Notice:</strong> {disclaimer}
                         </p>
                     </div>
-                    <a
+                    <Link
                         href={buttonHref}
                         className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition"
                     >
                         {buttonText}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

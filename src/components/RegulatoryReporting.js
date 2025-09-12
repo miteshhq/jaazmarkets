@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function RegulatoryReporting({ data }) {
     const { heading, description, reports } = data
@@ -31,12 +32,12 @@ export default function RegulatoryReporting({ data }) {
                             <p className="text-gray-600  text-sm mb-4">
                                 {report.description}
                             </p>
-                            <a
+                            <Link
                                 href={report.link}
                                 className="text-primary-orange hover:text-primary-orange/80 font-medium text-sm"
                             >
                                 {report.linkText} →
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </div>

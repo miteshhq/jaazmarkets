@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { FileText, Shield, AlertTriangle, CheckCircle, Lock } from 'lucide-react'
 
 const iconMap = {
@@ -51,13 +52,13 @@ export default function LegalDocuments({ data }) {
                                         ))}
                                     </div>
 
-                                    <a
+                                    <Link
                                         href={document.link}
                                         className={`block w-full py-3 px-4 ${document.buttonStyle} rounded-lg transition font-medium text-center`}
                                     >
                                         <FileText className="w-5 h-5 mr-2 inline" />
                                         View Document
-                                    </a>
+                                    </Link>
                                 </div>
                             )
                         })}
@@ -72,14 +73,14 @@ export default function LegalDocuments({ data }) {
                             {quickLinks.links.map((link, index) => {
                                 const IconComp = iconMap[link.iconName] || FileText
                                 return (
-                                    <a
+                                    <Link
                                         key={index}
                                         href={link.href}
                                         className="flex items-center justify-center px-4 py-3 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-orange"
                                     >
                                         <IconComp className="w-4 h-4 mr-2" />
                                         {link.text}
-                                    </a>
+                                    </Link>
                                 )
                             })}
                         </div>
