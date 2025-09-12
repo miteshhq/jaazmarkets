@@ -33,7 +33,7 @@ export default function IFrameData({ data }) {
                             <div className="tradingview-widget-container" style={{ height: '100%', width: '100%', colorScheme: 'light', background: 'white' }}>
                                 <iframe
                                     scrolling="no"
-                                    allowTransparency="true"
+                                    allowtransparency="true"
                                     frameBorder="0"
                                     src={iframe}
                                     title="Economic Calendar Widget"

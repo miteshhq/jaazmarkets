@@ -1,561 +1,463 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
-import {
-    FaChartLine,
-    FaUserFriends,
-    FaLaptop,
-    FaCog,
-    FaSignInAlt,
-    FaBars,
-    FaTimes,
-    FaChevronDown,
-} from "react-icons/fa";
+
+// Import icons with fallback handling
+let TrendingUp, BarChart3, Users, Settings, LogIn, Menu, X, ChevronDown,
+    Monitor, Building, HeadphonesIcon, HelpCircle, Download, Shield, Globe, BookOpen, Calendar, MoreHorizontal;
+
+const icons = require("lucide-react");
+TrendingUp = icons.TrendingUp;
+BarChart3 = icons.BarChart3;
+Users = icons.Users;
+Settings = icons.Settings;
+LogIn = icons.LogIn;
+Menu = icons.Menu;
+X = icons.X;
+ChevronDown = icons.ChevronDown;
+Monitor = icons.Monitor;
+Building = icons.Building;
+HeadphonesIcon = icons.Headphones;
+HelpCircle = icons.HelpCircle;
+Download = icons.Download;
+Shield = icons.Shield;
+Globe = icons.Globe;
+BookOpen = icons.BookOpen
+Calendar = icons.Calendar
+MoreHorizontal = icons.MoreHorizontal
+
+// Navigation Configuration
+const NAVIGATION_CONFIG = {
+    markets: {
+        id: 'markets',
+        label: 'Markets',
+        icon: TrendingUp,
+        items: [
+            { href: '/products', label: 'All Products', icon: BarChart3, description: 'View all trading products' },
+            { href: '/trading/forex', label: 'Forex', icon: TrendingUp, description: 'Currency trading' },
+            { href: '/trading/advantages-of-forex', label: 'Advantages of Forex', icon: BarChart3, description: 'Benefits of forex trading' },
+            { href: '/trading/stocks', label: 'Stocks', icon: Building, description: 'Stock market trading' },
+            { href: '/trading/crypto', label: 'Cryptocurrencies', icon: TrendingUp, description: 'Digital currency trading' },
+            { href: '/trading/indices', label: 'Indices', icon: BarChart3, description: 'Index trading' },
+            { href: '/trading/metals', label: 'Precious Metals', icon: Shield, description: 'Gold, silver trading' },
+            { href: '/trading/commodities', label: 'Commodities', icon: Globe, description: 'Raw materials trading' }
+        ]
+    },
+    trading: {
+        id: 'trading',
+        label: 'Trading',
+        icon: BarChart3,
+        items: [
+            { href: '/trading/account-types', label: 'Account Types', icon: Users, description: 'Different account options' },
+            { href: '/trading/conditions', label: 'Trading Conditions', icon: Settings, description: 'Terms and conditions' },
+            { href: '/trading/deposit-withdrawal', label: 'Deposit & Withdrawal', icon: BarChart3, description: 'Fund management' },
+            { href: '/trading/hours', label: 'Trading Hours', icon: Globe, description: 'Market hours' },
+            { href: '/trust/security', label: 'Security', icon: Shield, description: 'Account security' },
+            { href: '/trust/regulation', label: 'Regulation', icon: Building, description: 'Regulatory compliance' },
+            { href: '/trust/cybersecurity', label: 'Cybersecurity', icon: Shield, description: 'Digital security measures' }
+        ]
+    },
+    platforms: {
+        id: 'platforms',
+        label: 'Platforms',
+        icon: Monitor,
+        items: [
+            { href: '/platform/overview', label: 'MT5 Overview', icon: Monitor, description: 'Platform overview' },
+            { href: '/platform/web', label: 'Web Terminal', icon: Globe, description: 'Web-based trading' },
+            { href: '/platform/desktop', label: 'Desktop Application', icon: Monitor, description: 'Desktop trading app' },
+            { href: '/platform/mobile', label: 'Mobile Apps', icon: Monitor, description: 'Mobile trading apps' }
+        ]
+    },
+    tools: {
+        id: 'tools',
+        label: 'Tools',
+        icon: Settings,
+        sections: [
+            {
+                title: 'Trading Tools',
+                items: [
+                    { href: '/tools/technical-analysis', label: 'Technical Analysis', icon: TrendingUp, description: 'Chart analysis tools' },
+                    { href: '/tools/specifications', label: 'Product Specifications', icon: BarChart3, description: 'Product details' },
+                    { href: '/tools/glossary', label: 'Trading Glossary', icon: BookOpen, description: 'Trading terms' },
+                    { href: '/tools/calendar', label: 'Economic Calendar', icon: Calendar, description: 'Economic events' },
+                    { href: '/tools/news', label: 'Market News', icon: Globe, description: 'Latest market news' },
+                    { href: '/tools/calculators', label: 'Trading Calculators', icon: Settings, description: 'Trading calculators' }
+                ]
+            },
+            {
+                title: 'Education',
+                items: [
+                    { href: '/academy', label: 'Trading Academy', icon: BookOpen, description: 'Learn to trade' },
+                    { href: '/blog', label: 'Market News & Blog', icon: Globe, description: 'News and insights' }
+                ]
+            }
+        ]
+    },
+    more: {
+        id: 'more',
+        label: 'More',
+        icon: MoreHorizontal,
+        sections: [
+            {
+                title: 'Company',
+                items: [
+                    { href: '/about', label: 'About Us', icon: Building, description: 'Company information' },
+                    { href: '/why-choose-us', label: 'Why Choose Us', icon: Shield, description: 'Our advantages' },
+                    { href: '/contact', label: 'Contact Us', icon: HeadphonesIcon, description: 'Get in touch' }
+                ]
+            },
+            {
+                title: 'Support',
+                items: [
+                    { href: '/faq', label: 'FAQ', icon: HelpCircle, description: 'Frequently asked questions' },
+                    { href: '/contact', label: 'Contact Support', icon: HeadphonesIcon, description: 'Support help' },
+                    { href: '/legal', label: 'Legal Documents', icon: Building, description: 'Legal information' }
+                ]
+            }
+        ]
+    }
+};
+
+const SINGLE_LINKS = [
+    { href: '/partners', label: 'Partners', icon: Users, description: 'Partnership opportunities' }
+];
+
+const CTA_BUTTONS = {
+    login: { href: '/login', label: 'Login', icon: LogIn, variant: 'secondary' },
+    register: { href: '/register', label: 'Start Trading', icon: TrendingUp, variant: 'primary' }
+};
 
 export default function Navbar() {
-    const [openMenu, setOpenMenu] = useState(null);
-    const [mobileOpen, setMobileOpen] = useState(false);
-    const [mobileSection, setMobileSection] = useState(null);
-    const headerRef = useRef(null);
+    const [activeDropdown, setActiveDropdown] = useState(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeMobileSection, setActiveMobileSection] = useState(null);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    // Close mobile menu when clicking outside
+    const navRef = useRef(null);
+    const dropdownTimeoutRef = useRef(null);
+
+    // Handle scroll effect
     useEffect(() => {
-        const handleOutside = (event) => {
-            if (
-                mobileOpen &&
-                headerRef.current &&
-                !headerRef.current.contains(event.target)
-            ) {
-                setMobileOpen(false);
-                setOpenMenu(null);
-                setMobileSection(null);
-            }
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
         };
 
-        document.addEventListener("mousedown", handleOutside);
-        document.addEventListener("touchstart", handleOutside, { passive: true });
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-        return () => {
-            document.removeEventListener("mousedown", handleOutside);
-            document.removeEventListener("touchstart", handleOutside);
-        };
-    }, [mobileOpen]);
-
-    // Close mobile menu on window resize to desktop
+    // Handle window resize
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 1024) {
-                setMobileOpen(false);
-                setOpenMenu(null);
-                setMobileSection(null);
+                setIsMobileMenuOpen(false);
+                setActiveMobileSection(null);
             }
         };
 
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Mobile menu toggle functions
-    const toggleMobileMenu = () => {
-        setMobileOpen(!mobileOpen);
-        if (mobileOpen) {
-            setMobileSection(null);
+    // Handle outside clicks
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setActiveDropdown(null);
+                setIsMobileMenuOpen(false);
+                setActiveMobileSection(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
         }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMobileMenuOpen]);
+
+    // Dropdown hover handlers with delay
+    const handleDropdownEnter = (menuId) => {
+        if (dropdownTimeoutRef.current) {
+            clearTimeout(dropdownTimeoutRef.current);
+        }
+        setActiveDropdown(menuId);
+    };
+
+    const handleDropdownLeave = () => {
+        dropdownTimeoutRef.current = setTimeout(() => {
+            setActiveDropdown(null);
+        }, 150);
+    };
+
+    // Mobile menu handlers
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+        if (isMobileMenuOpen) setActiveMobileSection(null);
+    };
+
+    const toggleMobileSection = (sectionId) => {
+        setActiveMobileSection(activeMobileSection === sectionId ? null : sectionId);
     };
 
     const closeMobileMenu = () => {
-        setMobileOpen(false);
-        setMobileSection(null);
+        setIsMobileMenuOpen(false);
+        setActiveMobileSection(null);
     };
 
-    const toggleMobileSection = (section) => {
-        setMobileSection(mobileSection === section ? null : section);
+    // Safe icon renderer
+    const renderIcon = (IconComponent, className = "w-4 h-4") => {
+        if (!IconComponent) return null;
+        return <IconComponent className={className} />;
     };
 
-    const menuItems = [
-        {
-            name: "Markets",
-            icon: <FaChartLine className="text-orange-500" />,
-            submenu: [
-                "All Products",
-                "Forex",
-                "Stocks",
-                "Crypto",
-                "Indices",
-                "Precious Metals",
-                "Commodities",
-            ],
-        },
-        {
-            name: "Trading",
-            icon: <FaLaptop className="text-orange-500" />,
-            submenu: [
-                "Account Types",
-                "Trading Conditions",
-                "Deposit & Withdrawal",
-                "Trading Hours",
-                "Security",
-                "Regulation",
-            ],
-        },
-        {
-            name: "Partners",
-            icon: <FaUserFriends className="text-orange-500" />,
-            link: "/partners",
-        },
-        {
-            name: "More",
-            icon: <FaCog className="text-orange-500" />,
-            submenu: {
-                "Company": [
-                    "About Us",
-                    "Contact Us",
-                ],
-                "Support": [
-                    "FAQ",
-                    "Trading Guide",
-                    "Platform Download",
-                    "Help Center",
-                ]
-            },
-        },
-    ];
+    // Component renderers
+    const renderDesktopDropdown = (config) => {
+        const isOpen = activeDropdown === config.id;
 
-    const handleMenuItemClick = (itemName) => {
-        setOpenMenu((prev) => (prev === itemName ? null : itemName));
+        return (
+            <div
+                key={config.id}
+                className="relative"
+                onMouseEnter={() => handleDropdownEnter(config.id)}
+                onMouseLeave={handleDropdownLeave}
+            >
+                <button
+                    className="flex items-center space-x-2 px-2 py-2 text-gray-700 hover:text-orange-600 focus:text-orange-600 transition-colors duration-200 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-200"
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                >
+                    {renderIcon(config.icon, "w-4 h-4 text-primary-orange")}
+                    <span className="font-medium">{config.label}</span>
+                    {renderIcon(ChevronDown, `w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`)}
+                </button>
+
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 mt-2 ${config.id === 'support' ? 'w-80 right-0 left-auto' : 'w-64'} bg-white rounded-xl shadow-lg border border-gray-100 transition-all duration-200 z-50 ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                    }`}>
+                    <div className="py-2">
+                        {config.sections ? (
+                            // Render sections (for support menu)
+                            config.sections.map((section, index) => (
+                                <div key={section.title} className={index > 0 ? "border-t border-gray-100 pt-2" : ""}>
+                                    <div className="px-3 pb-2">
+                                        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                                            {section.title}
+                                        </h3>
+                                        {section.items.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                className="flex items-center space-x-3 px-3 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
+                                                title={item.description}
+                                            >
+                                                {renderIcon(item.icon, "w-4 h-4 text-primary-orange")}
+                                                <span className="text-sm">{item.label}</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            // Render regular items
+                            config.items.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="flex items-center space-x-3 px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200 mx-2"
+                                    title={item.description}
+                                >
+                                    {renderIcon(item.icon, "w-4 h-4 text-primary-orange")}
+                                    <span className="text-sm">{item.label}</span>
+                                </Link>
+                            ))
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const renderDesktopLink = (link) => {
+        return (
+            <Link
+                key={link.href}
+                href={link.href}
+                className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-orange-600 focus:text-orange-600 transition-colors duration-200 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-200"
+                title={link.description}
+            >
+                {renderIcon(link.icon, "w-4 h-4 text-primary-orange")}
+                <span className="font-medium">{link.label}</span>
+            </Link>
+        );
+    };
+
+    const renderCTAButton = (button) => {
+        const isPrimary = button.variant === 'primary';
+
+        return (
+            <Link
+                key={button.href}
+                href={button.href}
+                className={`inline-flex items-center space-x-2 px-6 py-2.5 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${isPrimary
+                    ? 'bg-primary-orange text-white hover:bg-orange-600 focus:ring-orange-600 shadow-md hover:shadow-lg transform hover:-translate-y-0.5'
+                    : 'text-primary-orange bg-white border border-primary-orange hover:bg-orange-50 hover:border-primary-orange focus:ring-primary-orange'
+                    }`}
+            >
+                {renderIcon(button.icon, "w-4 h-4")}
+                <span>{button.label}</span>
+            </Link>
+        );
+    };
+
+    const renderMobileSection = (config) => {
+        const isExpanded = activeMobileSection === config.id;
+
+        return (
+            <div key={config.id} className="border-b border-gray-100 last:border-b-0">
+                <button
+                    className="w-full flex items-center justify-between px-4 py-4 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                    onClick={() => toggleMobileSection(config.id)}
+                    aria-expanded={isExpanded}
+                >
+                    <div className="flex items-center space-x-3">
+                        {renderIcon(config.icon, "w-5 h-5 text-primary-orange")}
+                        <span className="font-medium">{config.label}</span>
+                    </div>
+                    {renderIcon(ChevronDown, `w-5 h-5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`)}
+                </button>
+
+                <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0'}`}>
+                    <div className="px-4 pb-4">
+                        {config.sections ? (
+                            config.sections.map((section, index) => (
+                                <div key={section.title} className={index > 0 ? "mt-4 pt-4 border-t border-gray-100" : ""}>
+                                    <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">
+                                        {section.title}
+                                    </h4>
+                                    {section.items.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className="flex items-center space-x-3 px-2 py-3 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
+                                            onClick={closeMobileMenu}
+                                        >
+                                            {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
+                                            <span className="text-sm">{item.label}</span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            ))
+                        ) : (
+                            config.items.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="flex items-center space-x-3 px-2 py-3 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
+                                    onClick={closeMobileMenu}
+                                >
+                                    {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
+                                    <span className="text-sm">{item.label}</span>
+                                </Link>
+                            ))
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const renderMobileLink = (link) => {
+        return (
+            <div key={link.href} className="border-b border-gray-100">
+                <Link
+                    href={link.href}
+                    className="flex items-center space-x-3 px-4 py-4 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                    onClick={closeMobileMenu}
+                >
+                    {renderIcon(link.icon, "w-5 h-5 text-primary-orange")}
+                    <span className="font-medium">{link.label}</span>
+                </Link>
+            </div>
+        );
     };
 
     return (
-        <header ref={headerRef} className="bg-white  border-b border-gray-200  sticky top-0 z-50 shadow-sm">
-            <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div className="flex justify-between items-center">
+        <header
+            ref={navRef}
+            className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b transition-all duration-300 py-1.5 ${isScrolled ? 'border-gray-200 shadow-lg bg-white/98' : 'border-gray-100 shadow-sm'
+                }`}
+        >
+            <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center">
-                            <p className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-primary-orange to-orange-700">Jaaz Markets</p>
-                        </Link>
-                    </div>
+                    <Link href="/" className="flex-shrink-0">
+                        <span className="text-xl px-0.5 font-black uppercase tracking-tighter bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 bg-clip-text text-transparent transition-all duration-300">
+                            Jaaz Markets
+                        </span>
+                    </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center space-x-8">
-                        {/* Markets */}
-                        <div className="relative group">
-                            <button className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                </svg>
-                                Markets
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute left-0 mt-2 w-64 bg-white  rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 border border-gray-100 ">
-                                <div className="py-1">
-                                    <Link href="/products" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">All Products</Link>
-                                    <Link href="/trading/forex" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Forex</Link>
-                                    <Link href="/trading/advantages-of-forex" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Advantages of Forex</Link>
-                                    <Link href="/trading/stocks" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Stocks</Link>
-                                    <Link href="/trading/crypto" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Cryptocurrencies</Link>
-                                    <Link href="/trading/indices" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Indices</Link>
-                                    <Link href="/trading/metals" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Precious Metals</Link>
-                                    <Link href="/trading/commodities" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Commodities</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Trading */}
-                        <div className="relative group">
-                            <button className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                </svg>
-                                Trading
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute left-0 mt-2 w-64 bg-white  rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 border border-gray-100 ">
-                                <div className="py-1">
-                                    <Link href="/trading/account-types" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Account Types</Link>
-                                    <Link href="/trading/conditions" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Trading Conditions</Link>
-                                    <Link href="/trading/deposit-withdrawal" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Deposit & Withdrawal</Link>
-                                    <Link href="/trading/hours" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Trading Hours</Link>
-                                    <Link href="/trust/security" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Security</Link>
-                                    <Link href="/trust/regulation" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Regulation</Link>
-                                    <Link href="/trust/cybersecurity" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Cybersecurity</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Platforms */}
-                        <div className="relative group">
-                            <button className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                                Platforms
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute left-0 mt-2 w-64 bg-white  rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 border border-gray-100 ">
-                                <div className="py-1">
-                                    <Link href="/platform/overview" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">MT5 Overview</Link>
-                                    <Link href="/platform/web" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Web Terminal</Link>
-                                    <Link href="/platform/desktop" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Desktop Application</Link>
-                                    <Link href="/platform/mobile" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Mobile Apps</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Tools */}
-                        <div className="relative group">
-                            <button className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                                Tools
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute left-0 mt-2 w-96 bg-white  rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 border border-gray-100 ">
-                                <div className="grid grid-cols-2 gap-0">
-                                    {/* Trading Tools */}
-                                    <div className="p-1">
-                                        <div className="px-4 py-3 border-b border-gray-100 ">
-                                            <h3 className="text-sm font-semibold text-gray-900  flex items-center">
-                                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                </svg>
-                                                Trading Tools
-                                            </h3>
-                                        </div>
-                                        <div className="py-1">
-                                            <Link href="/tools/technical-analysis" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Technical Analysis</Link>
-                                            <Link href="/tools/specifications" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Product Specifications</Link>
-                                            <Link href="/tools/glossary" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Trading Glossary</Link>
-                                            <Link href="/tools/calendar" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Economic Calendar</Link>
-                                            <Link href="/tools/news" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Market News</Link>
-                                            <Link href="/tools/calculators" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Trading Calculators</Link>
-                                        </div>
-                                    </div>
-
-                                    {/* Education */}
-                                    <div className="p-1 border-l border-gray-100 ">
-                                        <div className="px-4 py-3 border-b border-gray-100 ">
-                                            <h3 className="text-sm font-semibold text-gray-900  flex items-center">
-                                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                                </svg>
-                                                Education
-                                            </h3>
-                                        </div>
-                                        <div className="py-1">
-                                            <Link href="/academy" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Trading Academy</Link>
-                                            <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Market News & Blog</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Partners */}
-                        <Link href="/partners" className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                            Partners
-                        </Link>
-
-                        {/* More */}
-                        <div className="relative group">
-                            <button className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center">
-                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                </svg>
-                                More
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute right-0 mt-2 w-96 bg-white  rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 border border-gray-100 ">
-                                <div className="grid grid-cols-2 gap-0">
-                                    {/* Company */}
-                                    <div className="p-1">
-                                        <div className="px-4 py-3 border-b border-gray-100 ">
-                                            <h3 className="text-sm font-semibold text-gray-900  flex items-center">
-                                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                                </svg>
-                                                Company
-                                            </h3>
-                                        </div>
-                                        <div className="py-1">
-                                            <Link href="/about" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">About Us</Link>
-                                            <Link href="/why-choose-us" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Why Choose Us</Link>
-                                            <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Contact Us</Link>
-                                        </div>
-                                    </div>
-
-                                    {/* Support */}
-                                    <div className="p-1 border-l border-gray-100 ">
-                                        <div className="px-4 py-3 border-b border-gray-100 ">
-                                            <h3 className="text-sm font-semibold text-gray-900  flex items-center">
-                                                <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                                </svg>
-                                                Support
-                                            </h3>
-                                        </div>
-                                        <div className="py-1">
-                                            <Link href="/faq" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">FAQ</Link>
-                                            <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Contact Support</Link>
-                                            <Link href="/legal" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Legal Documents</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="hidden lg:flex items-center space-x-0">
+                        {Object.values(NAVIGATION_CONFIG).map(renderDesktopDropdown)}
+                        {SINGLE_LINKS.map(renderDesktopLink)}
                     </div>
 
                     {/* Desktop CTA Buttons */}
-                    <div className="hidden md:flex items-center space-x-3">
-                        <Link href="/login" target="_blank" className="group relative py-2.5 px-5 text-primary-orange font-semibold hover:text-white transition-all duration-300 border border-primary-orange rounded-lg hover:bg-primary-orange overflow-hidden">
-                            <span className="relative z-10 flex items-center">
-                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                                </svg>
-                                Login
-                            </span>
-                            <div className="absolute inset-0 bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                        </Link>
-                        <Link href="/register" target="_blank" className="group relative py-2.5 px-6 bg-primary-orange text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-primary-orange/90 transform hover:-translate-y-0.5">
-                            <span className="flex items-center">
-                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                </svg>
-                                Start Trading
-                            </span>
-                        </Link>
+                    <div className="hidden lg:flex items-center space-x-4">
+                        {Object.values(CTA_BUTTONS).map(renderCTAButton)}
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="lg:hidden">
-                        <button
-                            type="button"
-                            className="text-gray-700  hover:text-primary-orange :text-primary-orange transition p-2"
-                            onClick={toggleMobileMenu}
-                        >
-                            {mobileOpen ? (
-                                <FaTimes className="w-6 h-6" />
-                            ) : (
-                                <FaBars className="w-6 h-6" />
-                            )}
-                        </button>
-                    </div>
+                    <button
+                        className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-orange-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-200 transition-colors duration-200"
+                        onClick={toggleMobileMenu}
+                        aria-expanded={isMobileMenuOpen}
+                        aria-label="Toggle navigation menu"
+                    >
+                        {isMobileMenuOpen ? renderIcon(X, "w-6 h-6") : renderIcon(Menu, "w-6 h-6")}
+                    </button>
                 </div>
 
                 {/* Mobile Menu */}
-                {mobileOpen && (
-                    <div className="lg:hidden bg-white  border-t border-gray-200 ">
-                        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                            <div className="space-y-4">
-                                {/* Markets */}
-                                <div className="space-y-2">
-                                    <button
-                                        className="w-full text-left text-gray-700  font-medium flex items-center justify-between"
-                                        onClick={() => toggleMobileSection('markets')}
-                                    >
-                                        <div className="flex items-center">
-                                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                            </svg>
-                                            Markets
-                                        </div>
-                                        <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'markets' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </button>
-                                    {mobileSection === 'markets' && (
-                                        <div className="pl-4 space-y-1">
-                                            <Link href="/products" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>All Products</Link>
-                                            <Link href="/trading/forex" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Forex</Link>
-                                            <Link href="/trading/advantages-of-forex" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Advantages of Forex</Link>
-                                            <Link href="/trading/stocks" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Stocks</Link>
-                                            <Link href="/trading/crypto" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Cryptocurrencies</Link>
-                                            <Link href="/trading/indices" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Indices</Link>
-                                            <Link href="/trading/metals" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Precious Metals</Link>
-                                            <Link href="/trading/commodities" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Commodities</Link>
-                                        </div>
-                                    )}
-                                </div>
+                <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                    }`}>
+                    <div className="bg-white border-t border-gray-100 max-h-[calc(100vh-4rem)] overflow-y-auto">
+                        {/* Mobile Navigation Items */}
+                        <div className="py-2">
+                            {Object.values(NAVIGATION_CONFIG).map(renderMobileSection)}
+                            {SINGLE_LINKS.map(renderMobileLink)}
+                        </div>
 
-                                {/* Trading */}
-                                <div className="space-y-2">
-                                    <button
-                                        className="w-full text-left text-gray-700  font-medium flex items-center justify-between"
-                                        onClick={() => toggleMobileSection('trading')}
-                                    >
-                                        <div className="flex items-center">
-                                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                            </svg>
-                                            Trading
-                                        </div>
-                                        <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'trading' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </button>
-                                    {mobileSection === 'trading' && (
-                                        <div className="pl-4 space-y-1">
-                                            <Link href="/trading/account-types" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Account Types</Link>
-                                            <Link href="/trading/conditions" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Trading Conditions</Link>
-                                            <Link href="/trading/deposit-withdrawal" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Deposit & Withdrawal</Link>
-                                            <Link href="/trading/hours" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Trading Hours</Link>
-                                            <Link href="/trust/security" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Security</Link>
-                                            <Link href="/trust/regulation" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Regulation</Link>
-                                            <Link href="/trust/cybersecurity" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Cybersecurity</Link>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Platforms */}
-                                <div className="space-y-2">
-                                    <button
-                                        className="w-full text-left text-gray-700  font-medium flex items-center justify-between"
-                                        onClick={() => toggleMobileSection('platforms')}
-                                    >
-                                        <div className="flex items-center">
-                                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                            </svg>
-                                            Platforms
-                                        </div>
-                                        <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'platforms' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </button>
-                                    {mobileSection === 'platforms' && (
-                                        <div className="pl-4 space-y-1">
-                                            <Link href="/platform/overview" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>MT5 Overview</Link>
-                                            <Link href="/platform/web" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Web Terminal</Link>
-                                            <Link href="/platform/desktop" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Desktop Application</Link>
-                                            <Link href="/platform/mobile" className="block text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Mobile Apps</Link>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Tools & Education */}
-                                <div className="space-y-2">
-                                    <button
-                                        className="w-full text-left text-gray-700  font-medium flex items-center justify-between"
-                                        onClick={() => toggleMobileSection('tools-education')}
-                                    >
-                                        <div className="flex items-center">
-                                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            </svg>
-                                            Tools & Education
-                                        </div>
-                                        <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'tools-education' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </button>
-                                    {mobileSection === 'tools-education' && (
-                                        <div className="pl-6 space-y-3">
-                                            {/* Trading Tools */}
-                                            <div className="space-y-1">
-                                                <div className="text-xs font-medium text-primary-orange uppercase tracking-wide mb-1">Trading Tools</div>
-                                                <Link href="/tools/technical-analysis" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Technical Analysis</Link>
-                                                <Link href="/tools/specifications" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Product Specifications</Link>
-                                                <Link href="/tools/glossary" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Trading Glossary</Link>
-                                                <Link href="/tools/calendar" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Economic Calendar</Link>
-                                                <Link href="/tools/news" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Market News</Link>
-                                                <Link href="/tools/calculators" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Trading Calculators</Link>
-                                            </div>
-
-                                            {/* Education */}
-                                            <div className="space-y-1 mt-3">
-                                                <div className="text-xs font-medium text-primary-orange uppercase tracking-wide mb-1">Education</div>
-                                                <Link href="/academy" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Trading Academy</Link>
-                                                <Link href="/blog" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Market News & Blog</Link>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Partners */}
-                                <Link href="/partners" className="text-gray-700  hover:text-primary-orange :text-primary-orange transition font-medium flex items-center" onClick={closeMobileMenu}>
-                                    <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                    </svg>
-                                    Partners
+                        {/* Mobile CTA Buttons */}
+                        <div className="p-4 border-t border-gray-100 space-y-3">
+                            {Object.values(CTA_BUTTONS).map((button) => (
+                                <Link
+                                    key={button.href}
+                                    href={button.href}
+                                    className={`w-full inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${button.variant === 'primary'
+                                        ? 'bg-primary-orange text-white hover:bg-orange-600 shadow-md'
+                                        : 'text-orange-700 bg-orange-50 border border-orange-200 hover:bg-orange-100'
+                                        }`}
+                                    onClick={closeMobileMenu}
+                                >
+                                    {renderIcon(button.icon, "w-4 h-4")}
+                                    <span>{button.label}</span>
                                 </Link>
-
-                                {/* More */}
-                                <div className="space-y-2">
-                                    <button
-                                        className="w-full text-left text-gray-700  font-medium flex items-center justify-between"
-                                        onClick={() => toggleMobileSection('more')}
-                                    >
-                                        <div className="flex items-center">
-                                            <svg className="w-4 h-4 mr-2 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                            </svg>
-                                            More
-                                        </div>
-                                        <svg className={`w-4 h-4 transform transition-transform ${mobileSection === 'more' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </button>
-                                    {mobileSection === 'more' && (
-                                        <div className="pl-6 space-y-3">
-                                            {/* Company */}
-                                            <div className="space-y-1">
-                                                <div className="text-xs font-medium text-primary-orange uppercase tracking-wide mb-1">Company</div>
-                                                <Link href="/about" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>About Us</Link>
-                                                <Link href="/why-choose-us" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Why Choose Us</Link>
-                                                <Link href="/contact" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Contact Us</Link>
-                                            </div>
-
-                                            {/* Support */}
-                                            <div className="space-y-1 mt-3">
-                                                <div className="text-xs font-medium text-primary-orange uppercase tracking-wide mb-1">Support</div>
-                                                <Link href="/faq" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>FAQ</Link>
-                                                <Link href="/contact" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Contact Support</Link>
-                                                <Link href="/legal" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Legal Documents</Link>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Mobile CTA Buttons */}
-                                <div className="pt-6 border-t border-gray-200  flex flex-col space-y-3">
-                                    <Link href="/login" target="_blank" className="group py-3 px-5 text-primary-orange font-semibold hover:text-white transition-all duration-300 border-2 border-primary-orange rounded-lg hover:bg-primary-orange text-center" onClick={closeMobileMenu}>
-                                        <span className="flex items-center justify-center">
-                                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                                            </svg>
-                                            Login
-                                        </span>
-                                    </Link>
-                                    <Link href="/register" target="_blank" className="group py-3 px-6 bg-primary-orange text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-primary-orange/90 text-center transform hover:scale-105" onClick={closeMobileMenu}>
-                                        <span className="flex items-center justify-center">
-                                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                            </svg>
-                                            Start Trading
-                                        </span>
-                                    </Link>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
-                )}
+                </div>
             </nav>
         </header>
     );
