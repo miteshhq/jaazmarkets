@@ -110,7 +110,6 @@ export default function Navbar() {
                 "Company": [
                     "About Us",
                     "Contact Us",
-                    "Careers",
                 ],
                 "Support": [
                     "FAQ",
@@ -297,7 +296,6 @@ export default function Navbar() {
                                         <div className="py-1">
                                             <Link href="/about" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">About Us</Link>
                                             <Link href="/why-choose-us" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Why Choose Us</Link>
-                                            <Link href="/careers" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Careers</Link>
                                             <Link href="/contact" className="block px-4 py-2 text-sm text-gray-700  hover:bg-primary-orange/10 hover:text-primary-orange transition-colors">Contact Us</Link>
                                         </div>
                                     </div>
@@ -521,7 +519,6 @@ export default function Navbar() {
                                                 <div className="text-xs font-medium text-primary-orange uppercase tracking-wide mb-1">Company</div>
                                                 <Link href="/about" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>About Us</Link>
                                                 <Link href="/why-choose-us" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Why Choose Us</Link>
-                                                <Link href="/careers" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Careers</Link>
                                                 <Link href="/contact" className="block pl-2 text-sm text-gray-600  hover:text-primary-orange" onClick={closeMobileMenu}>Contact Us</Link>
                                             </div>
 
