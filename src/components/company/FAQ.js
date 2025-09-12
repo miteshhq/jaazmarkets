@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 
 export default function FAQ({ data }) {
     const { heading, description, faqs, viewAllLink } = data
@@ -44,10 +45,10 @@ export default function FAQ({ data }) {
                     </div>
 
                     <div className="text-center mt-8">
-                        <a href={viewAllLink} className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-semibold rounded-lg hover:bg-primary-orange/90 transition">
+                        <Link href={viewAllLink} className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-semibold rounded-lg hover:bg-primary-orange/90 transition">
                             View All FAQs
                             <ChevronDown className="w-4 h-4 ml-2 -rotate-90" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
