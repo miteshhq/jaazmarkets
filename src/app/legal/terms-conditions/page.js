@@ -17,7 +17,7 @@ const contentData = {
     companyInfo: [
         { label: 'Company Name', value: 'Jaaz Markets LTD' },
         { label: 'Registration Number', value: 'HT00324027' },
-        { label: 'Registered Address', value: 'Bonovo Road – Fomboni, Island of Mohéli – Comoros Union' },
+        { label: 'Registered Address', value: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia' },
         { label: 'Website', value: 'www.jaazmarkets.com' }
     ],
     tableOfContents: [
@@ -294,8 +294,8 @@ const contentData = {
         bgColor: 'bg-gray-50',
         details: [
             '<strong>Email:</strong> info@jaazmarkets.com',
-            '<strong>Phone:</strong> +971-50-8596-279',
-            '<strong>Address:</strong> Bonovo Road – Fomboni, Island of Mohéli – Comoros Union'
+            '<strong>Phone:</strong> PhonePending',
+            '<strong>Address:</strong> Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia'
         ]
     },
     versionHistory: [

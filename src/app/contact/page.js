@@ -41,7 +41,7 @@ const contactHeroData = {
             hoverBorder: 'hover:border-white',
             iconBg: 'bg-gradient-to-br from-black to-gray-800',
             statusBg: 'bg-primary-orange/20',
-            contact: '+971-50-8596-279',
+            contact: 'PhonePending',
             statusInfo: 'Dubai (24/7)',
             statusText: 'text-gray-300',
             buttonStyle: 'bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black',
@@ -134,7 +134,7 @@ const contactMethodsData = {
             availabilityColor: 'text-gray-500',
             linkStyle: 'bg-primary-orange text-white hover:bg-primary-orange/90',
             buttonText: 'Call Now',
-            buttonLink: 'tel:+971508596279'
+            buttonLink: 'tel:PhonePending'
         },
         {
             title: 'WhatsApp',
@@ -167,12 +167,12 @@ const contactFormData = {
         {
             icon: 'MapPin',
             title: 'Registered Office',
-            content: 'Jaaz Markets LTD<br>Bonovo Road – Fomboni<br>Island of Mohéli – Comoros Union<br>Registration Number: HT00324027'
+            content: 'Jaaz Markets LTD<br>Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia<br>Registration Number: HT00324027'
         },
         {
             icon: 'Building',
             title: 'Physical Office',
-            content: 'Office # 210 Al-Nasar Sports Club<br>Dubai, UAE'
+            content: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia'
         },
         {
             icon: 'Mail',
@@ -182,7 +182,7 @@ const contactFormData = {
         {
             icon: 'Phone',
             title: 'Phone Number',
-            content: '+971-50-8596-279<br>WhatsApp Available'
+            content: 'PhonePending<br>WhatsApp Available'
         },
         {
             icon: 'Clock',

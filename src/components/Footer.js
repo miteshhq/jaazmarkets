@@ -182,8 +182,8 @@ export default function Footer() {
                             <li className="flex items-start group">
                                 <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange mr-3 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                 <div className="text-gray-400 text-sm sm:text-base">
-                                    <div>Office # 210 Al-Nasar Sports Club</div>
-                                    <div>Dubai, UAE</div>
+                                    <div>Ground Floor, Rodney Court Building, Rodney Bay</div>
+                                    <div>Gros Islet, Saint Lucia</div>
                                 </div>
                             </li>
                             <li className="flex items-start group">
@@ -200,11 +200,11 @@ export default function Footer() {
                                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange mr-3 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                 <div className="text-gray-400 text-sm sm:text-base">
                                     <a
-                                        href="tel:+971508596279"
+                                        href="tel:PhonePending"
                                         className="hover:text-primary-orange transition-colors duration-300 focus:outline-none focus:underline focus:decoration-primary-orange"
-                                        aria-label="Call +971-50-8596-279"
+                                        aria-label="Call PhonePending"
                                     >
-                                        +971-50-8596-279
+                                        PhonePending
                                     </a>
                                     <div className="text-xs sm:text-sm text-gray-500 mt-1">24/7 Support</div>
                                 </div>
@@ -267,15 +267,12 @@ export default function Footer() {
                             style={{ transitionProperty: 'max-height, opacity' }}
                         >
                             <p>
-                                <strong className="text-gray-200">Investment Risk:</strong> An investment in derivatives may mean investors may lose an amount even greater than their original investment. Anyone wishing to invest in any of the products mentioned in [www.jaazmarkets.com](https://www.jaazmarkets.com) should seek their own financial or professional advice. Trading of securities, forex, stock market, commodities, options and futures may not be suitable for everyone and involves the risk of losing part or all of your money.
+                                <strong className="text-gray-200">Investment Risk:</strong> An investment in derivatives may mean investors may lose an amount even
+                                greater than their original investment. Anyone wishing to invest in any of the products mentioned in https://www.jaazmarkets.com/ should seek their own financial or professional advice. Trading of securities, forex, stock market, commodities, options and futures may not be suitable for everyone and involves the risk of losing part or all of your money. Trading in the financial markets has large potential rewards, but also large potential risk. You must be aware of the risks and be willing to accept them in order to invest in the markets. Don't invest and trade with money which you can't afford to lose. Forex Trading are not allowed in some countries, before investing your money, make sure whether your country is allowing this or not.
                             </p>
 
                             <p>
-                                <strong className="text-gray-200">Market Risk:</strong> Trading in the financial markets has large potential rewards, but also large potential risk. You must be aware of the risks and be willing to accept them in order to invest in the markets. Don't invest and trade with money which you can't afford to lose. Forex Trading are not allowed in some countries, before investing your money, make sure whether your country is allowing this or not.
-                            </p>
-
-                            <p>
-                                <strong className="text-gray-200">Professional Advice:</strong> You are strongly advised to obtain independent financial, legal and tax advice before proceeding with any currency or spot metals trade. Nothing in this site should be read or construed as constituting advice on the part of Jazz Markets LTD or any of its affiliates, directors, officers or employees.
+                                <strong className="text-gray-200">Professional Advice:</strong> You are strongly advised to obtain independent financial, legal and tax advice before proceeding with any currency or spot metals trade. Nothing in this site should be read or construed as constituting advice on the part of Jaaz Markets Ltd. or any of its affiliates, directors, officers or employees.
                             </p>
 
                             <div className="bg-gray-700/30 rounded-lg p-4 mt-6 border border-gray-600/30">
@@ -284,7 +281,7 @@ export default function Footer() {
                                     Restricted Regions
                                 </h4>
                                 <p className="text-gray-400 text-xs sm:text-sm">
-                                    Jazz Markets LTD does not provide services for citizens/residents of the <strong className="text-gray-200">United States, Cuba, Iraq, Myanmar, North Korea, Sudan</strong>. The services of Jazz Markets LTD are not intended for distribution to, or use by, any person in any country or jurisdiction where such distribution or use would be contrary to local law or regulation.
+                                    Jaaz Markets Ltd. does not provide services for citizens/residents of the <strong className='text-gray-200'>United States, Cuba, Iraq, Myanmar, North Korea, Sudan, United Arab Emirates and India.</strong> The services of Jaaz Markets Ltd. are not intended for distribution to, or use by, any person in any country or jurisdiction where such distribution or use would be contrary to local law or regulation.
                                 </p>
                             </div>
                         </div>

@@ -450,8 +450,8 @@ const contentData = {
         details: [
             '<strong>Compliance Officer</strong>',
             '<strong>Email:</strong> info@jaazmarkets.com',
-            '<strong>Phone:</strong> +971-50-8596-279',
-            '<strong>Address:</strong> Jaaz Markets LTD<br>Bonovo Road – Fomboni<br>Island of Mohéli – Comoros Union'
+            '<strong>Phone:</strong> PhonePending',
+            '<strong>Address:</strong> Jaaz Markets LTD<br>Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia'
         ]
     },
     versionHistory: [

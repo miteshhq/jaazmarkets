@@ -216,7 +216,7 @@ const page = () => {
             <StartTradingBanner {...bannerProps} />
             <PartnerBenefits data={benefitsData} />
             <CommissionStructure data={commissionData} />
-            <PartnershipTypes data={partnershipTypesData} />
+            {/* <PartnershipTypes data={partnershipTypesData} /> */}
             <GetStartedSteps data={stepsData} />
             <StartTradingCTA {...ctaData} />
         </main>

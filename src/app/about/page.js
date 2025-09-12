@@ -209,14 +209,14 @@ const globalPresenceData = {
         {
             location: 'Comoros Union',
             type: 'Registered Office',
-            address: 'Bonovo Road – Fomboni, Island of Mohéli',
+            address: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia',
             iconBg: 'bg-blue-100',
             iconColor: 'text-blue-600'
         },
         {
             location: 'Dubai, UAE',
             type: 'Physical Office',
-            address: 'Office # 210 Al-Nasar Sports Club',
+            address: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia',
             iconBg: 'bg-primary-orange/20',
             iconColor: 'text-primary-orange'
         }
