@@ -241,7 +241,7 @@ const faqData = {
 
 const page = () => {
     return (
-        <main> href
+        <main>
             <ContactHero data={contactHeroData} />
             <ContactMethods data={contactMethodsData} />
             <ContactForm data={contactFormData} />
