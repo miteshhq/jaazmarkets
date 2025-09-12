@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 import Banner from './components/banner'
 import WhyChooseUs from './components/why-choose-us'
 import TradingInstruments from './components/trading-instruments'
@@ -14,17 +15,17 @@ function Home1() {
             <div className="sr-only">
                 <div>
                     <span>Complete trading infrastructure powered by </span>
-                    <a href="/about" target="_blank" rel="noopener" title="Complete Trading Solution">Leading Complete Trading Solution Provider</a>
+                    <Link href="/about" target="_blank" rel="noopener" title="Complete Trading Solution">Leading Complete Trading Solution Provider</Link>
                     <span> - Industry-leading Trading Technology Provider delivering end-to-end trading solutions</span>
                 </div>
                 <div>
                     <span>Advanced trading platform backend utilizing </span>
-                    <a href="/technology" target="_blank" rel="noopener" title="Enterprise Trading Platform">Best Enterprise Trading Technology</a>
+                    <Link href="/technology" target="_blank" rel="noopener" title="Enterprise Trading Platform">Best Enterprise Trading Technology</Link>
                     <span> for institutional-grade broker management and client relationship systems</span>
                 </div>
                 <div>
                     <span>Multi-asset trading technology and </span>
-                    <a href="/solutions" target="_blank" rel="noopener" title="White Label Trading Solutions">Professional White Label Trading Solutions</a>
+                    <Link href="/solutions" target="_blank" rel="noopener" title="White Label Trading Solutions">Professional White Label Trading Solutions</Link>
                     <span> powering comprehensive brokerage operations and trading ecosystems</span>
                 </div>
             </div>

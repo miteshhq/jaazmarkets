@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 const Banner = () => {
     return (
@@ -93,19 +94,19 @@ const Banner = () => {
 
                     <div className="text-center">
                         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
-                            <a href="/register" className="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-primary-orange to-orange-600 hover:from-orange-600 hover:to-primary-orange text-white text-lg font-black rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-primary-orange/50">
+                            <Link href="/register" className="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-primary-orange to-orange-600 hover:from-orange-600 hover:to-primary-orange text-white text-lg font-black rounded-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-primary-orange/50">
                                 <span className="relative z-10">START DOMINATING</span>
                                 <svg className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                                 <div className="absolute inset-0 bg-white rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                            </a>
-                            <a href="/platform" className="inline-flex items-center px-10 py-5 bg-transparent border-3 border-white text-white text-lg font-black rounded-xl hover:bg-white hover:text-black transition-all transform hover:scale-105">
+                            </Link>
+                            <Link href="/platform" className="inline-flex items-center px-10 py-5 bg-transparent border-3 border-white text-white text-lg font-black rounded-xl hover:bg-white hover:text-black transition-all transform hover:scale-105">
                                 DEMO TERMINAL
                                 <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="text-center text-gray-400">

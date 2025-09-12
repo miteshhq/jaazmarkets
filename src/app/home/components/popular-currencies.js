@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 const PopularCurrencies = () => {
     const coins = [
@@ -26,8 +27,8 @@ const PopularCurrencies = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
-                    {coins.map((coin) => (
-                        <div className="group">
+                    {coins.map((coin, index) => (
+                        <div className="group" key={index}>
                             <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-110">
                                 <img src={coin.icon} alt="coin" className="w-8 h-8 md:w-10 md:h-10 object-contain" loading="lazy" />
                             </div>
@@ -40,12 +41,12 @@ const PopularCurrencies = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="/trading/crypto" className="inline-flex items-center px-8 py-3 bg-white text-primary-orange font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                    <Link href="/trading/crypto" className="inline-flex items-center px-8 py-3 bg-white text-primary-orange font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                         Start Crypto Trading
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

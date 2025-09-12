@@ -2,13 +2,13 @@ import { DollarSign, Building2, ArrowUpRight, Package } from "lucide-react";
 
 export default function TradeGlobalMarkets() {
     return (
-        <section className="bg-white dark:bg-gray-900 py-16 lg:py-20">
+        <section className="bg-white  py-16 lg:py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900  mb-6">
                         Trade Global Markets
                     </h2>
-                    <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-lg lg:text-xl text-gray-600  max-w-4xl mx-auto leading-relaxed">
                         Access thousands of trading instruments across multiple asset classes with competitive spreads, fast execution, and professional tools.
                     </p>
                 </div>
@@ -21,7 +21,7 @@ export default function TradeGlobalMarkets() {
                             </svg>
                         </div>
                         <h3 className="text-2xl font-bold text-primary-orange mb-2">60+</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base leading-relaxed">Major Forex Pairs</p>
+                        <p className="text-gray-600  text-sm lg:text-base leading-relaxed">Major Forex Pairs</p>
                     </div>
 
                     <div className="text-center">
@@ -31,7 +31,7 @@ export default function TradeGlobalMarkets() {
                             </svg>
                         </div>
                         <h3 className="text-2xl font-bold text-primary-orange mb-2">1000+</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base leading-relaxed">Global Stocks</p>
+                        <p className="text-gray-600  text-sm lg:text-base leading-relaxed">Global Stocks</p>
                     </div>
 
                     <div className="text-center">
@@ -41,7 +41,7 @@ export default function TradeGlobalMarkets() {
                             </svg>
                         </div>
                         <h3 className="text-2xl font-bold text-primary-orange mb-2">30+</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base leading-relaxed">Cryptocurrencies</p>
+                        <p className="text-gray-600  text-sm lg:text-base leading-relaxed">Cryptocurrencies</p>
                     </div>
 
                     <div className="text-center">
@@ -51,7 +51,7 @@ export default function TradeGlobalMarkets() {
                             </svg>
                         </div>
                         <h3 className="text-2xl font-bold text-primary-orange mb-2">25+</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm lg:text-base leading-relaxed">Commodities &amp; Metals</p>
+                        <p className="text-gray-600  text-sm lg:text-base leading-relaxed">Commodities &amp; Metals</p>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "./COMMON/page";
-import Footer from "./COMMON/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
