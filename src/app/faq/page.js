@@ -139,7 +139,7 @@ const ctaData = {
     buttons: [
         {
             text: "Contact Support",
-            href: "/register",
+            href: "/contact",
             variant: "primary",
             icon: "arrow"
         },
