@@ -19,7 +19,7 @@ USAGE OPTIONS:
 3. Process ALL files in specific folders (including nested):
    - Set folders_to_search = [] (can be empty or specific folders)
    - Set files_to_find = [] (can be empty)
-   - Set process_all_files_in_folders = ["app/_components/", "src/utils/"]
+   - Set process_all_files_in_folders = ["app/components/", "src/utils/"]
    
 4. Combine approaches:
    - Set specific files to find AND folders to process all files from
@@ -37,8 +37,8 @@ files_to_find = [
 ]
 
 # Process ALL files in these folders (including all nested subfolders)
-# Example: ["app/_components/", "src/utils/", "lib/"]
-process_all_files_in_folders = ['src/_components/']
+# Example: ["app/components/", "src/utils/", "lib/"]
+process_all_files_in_folders = ['src/components/']
 
 # File extensions to include when processing all files in folders
 # Leave empty to include all files, or specify extensions like ['.js', '.jsx', '.ts', '.tsx', '.py']
@@ -120,7 +120,7 @@ def is_in_process_all_folders(file_path, process_folders, root_dir):
         # Handle both absolute-style paths and relative paths
         folder_normalized = normalize_path(folder.strip('/'))
         
-        # Remove leading slash if present (for paths like '/src/app/_components/')
+        # Remove leading slash if present (for paths like '/src/app/components/')
         if folder_normalized.startswith('/'):
             folder_normalized = folder_normalized[1:]
         
