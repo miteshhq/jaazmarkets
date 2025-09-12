@@ -20,7 +20,7 @@ export default function CategoryFAQ({ data }) {
     }
 
     return (
-        <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+        <section className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
                     {/* FAQ Categories */}
@@ -28,7 +28,7 @@ export default function CategoryFAQ({ data }) {
                         const IconComp = iconMap[category.iconName] || User
                         return (
                             <div key={categoryIndex} className="mb-12">
-                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
                                     <IconComp className="w-8 h-8 text-primary-orange mr-3" />
                                     {category.title}
                                 </h2>
@@ -36,12 +36,12 @@ export default function CategoryFAQ({ data }) {
                                     {category.faqs.map((faq, faqIndex) => {
                                         const isOpen = openItems[`${categoryIndex}-${faqIndex}`]
                                         return (
-                                            <div key={faqIndex} className="bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                            <div key={faqIndex} className="bg-gray-50 rounded-lg">
                                                 <button
                                                     className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
                                                     onClick={() => toggleFAQ(categoryIndex, faqIndex)}
                                                 >
-                                                    <span className="font-semibold text-gray-900 dark:text-white">
+                                                    <span className="font-semibold text-gray-900">
                                                         {faq.question}
                                                     </span>
                                                     <ChevronDown className={`w-5 h-5 text-gray-500 transform transition-transform ${isOpen ? 'rotate-180' : ''
@@ -49,7 +49,7 @@ export default function CategoryFAQ({ data }) {
                                                 </button>
                                                 {isOpen && (
                                                     <div className="px-6 pb-4">
-                                                        <p className="text-gray-600 dark:text-gray-300">
+                                                        <p className="text-gray-600">
                                                             {faq.answer}
                                                         </p>
                                                     </div>
@@ -63,11 +63,11 @@ export default function CategoryFAQ({ data }) {
                     })}
 
                     {/* Contact CTA */}
-                    <div className="text-center bg-gray-50 dark:bg-gray-800 rounded-2xl p-12 mt-16">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <div className="text-center bg-gray-50 rounded-2xl p-12 mt-16">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
                             {contactCTA.heading}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                             {contactCTA.description}
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">

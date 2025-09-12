@@ -186,9 +186,9 @@ const contentData = {
                 },
                 {
                     type: 'warning',
-                    bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-                    borderColor: 'border-blue-200 dark:border-blue-800',
-                    textColor: 'text-blue-800 dark:text-blue-300',
+                    bgColor: 'bg-blue-50',
+                    borderColor: 'border-blue-200',
+                    textColor: 'text-blue-800',
                     strongText: 'Note: ',
                     text: 'We never sell your personal information to third parties for marketing purposes.'
                 }
@@ -256,44 +256,44 @@ const contentData = {
                     items: [
                         {
                             title: 'Access',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Request a copy of your personal data we hold'
                         },
                         {
                             title: 'Correction',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Request correction of inaccurate or incomplete data'
                         },
                         {
                             title: 'Deletion',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Request deletion of your data (subject to legal requirements)'
                         },
                         {
                             title: 'Portability',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Receive your data in a structured, machine-readable format'
                         },
                         {
                             title: 'Objection',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Object to certain processing of your data'
                         },
                         {
                             title: 'Restriction',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             content: 'Request restriction of processing in certain circumstances'
                         }
                     ]
@@ -389,7 +389,7 @@ const contentData = {
     contactInfo: {
         title: 'Data Protection Officer',
         description: '',
-        bgColor: 'bg-gray-50 dark:bg-gray-800',
+        bgColor: 'bg-gray-50',
         details: [
             '<strong>Email:</strong> info@jaazmarkets.com',
             '<strong>Phone:</strong> +971-50-8596-279',
@@ -401,7 +401,7 @@ const contentData = {
 const ctaData = {
     heading: 'Have Questions?',
     description: 'Our team is here to help with any privacy concerns',
-    backgroundColor: 'bg-gray-100 dark:bg-gray-800',
+    backgroundColor: 'bg-gray-100',
     buttons: [
         {
             text: 'Contact Support',

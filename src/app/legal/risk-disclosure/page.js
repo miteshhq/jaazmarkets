@@ -29,9 +29,9 @@ const contentData = {
             content: [
                 {
                     type: 'warning',
-                    bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+                    bgColor: 'bg-orange-50',
                     borderColor: 'border-l-4 border-orange-500',
-                    textColor: 'text-orange-800 dark:text-orange-300',
+                    textColor: 'text-orange-800',
                     strongText: '',
                     text: 'Leverage can work both for and against you. While it can amplify profits, it can also magnify losses.',
                     fontWeight: 'font-semibold'
@@ -136,9 +136,9 @@ const contentData = {
                 },
                 {
                     type: 'warning',
-                    bgColor: 'bg-red-50 dark:bg-red-900/20',
-                    borderColor: 'border border-red-200 dark:border-red-800',
-                    textColor: 'text-red-800 dark:text-red-300',
+                    bgColor: 'bg-red-50',
+                    borderColor: 'border border-red-200',
+                    textColor: 'text-red-800',
                     strongText: 'Extreme Risk Warning: ',
                     text: 'Cryptocurrency markets are extremely volatile and can experience price swings of 20% or more in a single day.'
                 },
@@ -233,44 +233,44 @@ const contentData = {
                     items: [
                         {
                             title: 'Use Stop-Loss Orders',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Set stop-losses to limit potential losses on every trade'
                         },
                         {
                             title: 'Manage Position Sizes',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Never risk more than you can afford to lose'
                         },
                         {
                             title: 'Understand Leverage',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Use lower leverage until you gain experience'
                         },
                         {
                             title: 'Education First',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Learn about markets before trading real money'
                         },
                         {
                             title: 'Start with Demo',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Practice on a demo account to understand platform and risks'
                         },
                         {
                             title: 'Monitor Positions',
-                            bgColor: 'bg-green-50 dark:bg-green-900/20',
-                            titleColor: 'text-green-900 dark:text-green-300',
-                            textColor: 'text-green-800 dark:text-green-400',
+                            bgColor: 'bg-green-50',
+                            titleColor: 'text-green-900',
+                            textColor: 'text-green-800',
                             content: 'Regularly check open positions and market conditions'
                         }
                     ]
@@ -283,7 +283,7 @@ const contentData = {
 const ctaData = {
     heading: 'Need More Information?',
     description: 'Our team is available to answer your questions about trading risks',
-    backgroundColor: 'bg-gray-100 dark:bg-gray-800',
+    backgroundColor: 'bg-gray-100',
     buttons: [
         {
             text: 'Contact Support',

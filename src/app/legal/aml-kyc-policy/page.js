@@ -82,9 +82,9 @@ const contentData = {
                     items: [
                         {
                             title: 'Individual Clients',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             list: [
                                 'Full legal name',
                                 'Date and place of birth',
@@ -96,9 +96,9 @@ const contentData = {
                         },
                         {
                             title: 'Corporate Clients',
-                            bgColor: 'bg-gray-50 dark:bg-gray-800',
-                            titleColor: 'text-gray-900 dark:text-white',
-                            textColor: 'text-gray-700 dark:text-gray-300',
+                            bgColor: 'bg-gray-50',
+                            titleColor: 'text-gray-900',
+                            textColor: 'text-gray-700',
                             list: [
                                 'Company name and registration number',
                                 'Registered address',
@@ -116,9 +116,9 @@ const contentData = {
                 },
                 {
                     type: 'warning',
-                    bgColor: 'bg-yellow-50 dark:bg-yellow-900/20',
-                    borderColor: 'border border-yellow-200 dark:border-yellow-800',
-                    textColor: 'text-yellow-800 dark:text-yellow-300',
+                    bgColor: 'bg-yellow-50',
+                    borderColor: 'border border-yellow-200',
+                    textColor: 'text-yellow-800',
                     strongText: 'Important: ',
                     text: 'All documents must be valid, clearly readable, and show all four corners of the document.'
                 },
@@ -213,9 +213,9 @@ const contentData = {
                     items: [
                         {
                             title: 'Transaction Monitoring',
-                            bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-                            titleColor: 'text-blue-900 dark:text-blue-300',
-                            textColor: 'text-blue-800 dark:text-blue-400',
+                            bgColor: 'bg-blue-50',
+                            titleColor: 'text-blue-900',
+                            textColor: 'text-blue-800',
                             list: [
                                 'Unusual transaction patterns',
                                 'Large or frequent deposits/withdrawals',
@@ -225,9 +225,9 @@ const contentData = {
                         },
                         {
                             title: 'Account Monitoring',
-                            bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-                            titleColor: 'text-blue-900 dark:text-blue-300',
-                            textColor: 'text-blue-800 dark:text-blue-400',
+                            bgColor: 'bg-blue-50',
+                            titleColor: 'text-blue-900',
+                            textColor: 'text-blue-800',
                             list: [
                                 'Dormant account reactivation',
                                 'Multiple account relationships',
@@ -284,9 +284,9 @@ const contentData = {
                 },
                 {
                     type: 'warning',
-                    bgColor: 'bg-red-50 dark:bg-red-900/20',
-                    borderColor: 'border border-red-200 dark:border-red-800',
-                    textColor: 'text-red-800 dark:text-red-300',
+                    bgColor: 'bg-red-50',
+                    borderColor: 'border border-red-200',
+                    textColor: 'text-red-800',
                     strongText: 'Important: ',
                     text: 'Staff must report suspicious activities immediately to the Compliance Officer. Client tipping-off is strictly prohibited.'
                 }
@@ -393,9 +393,9 @@ const contentData = {
                 },
                 {
                     type: 'warning',
-                    bgColor: 'bg-yellow-50 dark:bg-yellow-900/20',
-                    borderColor: 'border border-yellow-200 dark:border-yellow-800',
-                    textColor: 'text-yellow-800 dark:text-yellow-300',
+                    bgColor: 'bg-yellow-50',
+                    borderColor: 'border border-yellow-200',
+                    textColor: 'text-yellow-800',
                     strongText: 'Note: ',
                     text: 'Failure to comply with these obligations may result in account restrictions or closure.'
                 }
@@ -446,7 +446,7 @@ const contentData = {
     contactInfo: {
         title: 'Compliance Contact',
         description: 'For questions about our AML/KYC procedures or to report concerns:',
-        bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+        bgColor: 'bg-blue-50',
         details: [
             '<strong>Compliance Officer</strong>',
             '<strong>Email:</strong> info@jaazmarkets.com',
@@ -464,7 +464,7 @@ const contentData = {
 const ctaData = {
     heading: 'Complete Your Verification',
     description: 'Start trading by completing our secure KYC process',
-    backgroundColor: 'bg-gray-100 dark:bg-gray-800',
+    backgroundColor: 'bg-gray-100',
     buttons: [
         {
             text: 'Open Account',

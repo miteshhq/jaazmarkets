@@ -28,7 +28,7 @@ const legalDocumentsData = {
             title: 'Terms & Conditions',
             description: 'General terms and conditions governing the use of our website and services.',
             iconName: 'FileText',
-            iconBg: 'bg-blue-100 dark:bg-blue-900/30',
+            iconBg: 'bg-blue-100',
             iconColor: 'text-blue-600',
             features: [
                 'Website usage policies',
@@ -56,7 +56,7 @@ const legalDocumentsData = {
             title: 'Risk Disclosure',
             description: 'Important information about the risks associated with financial trading.',
             iconName: 'AlertTriangle',
-            iconBg: 'bg-yellow-100 dark:bg-yellow-900/30',
+            iconBg: 'bg-yellow-100',
             iconColor: 'text-yellow-600',
             features: [
                 'Market risk factors',
@@ -70,7 +70,7 @@ const legalDocumentsData = {
             title: 'AML/KYC Policy',
             description: 'Anti-money laundering and know your customer compliance procedures.',
             iconName: 'Shield',
-            iconBg: 'bg-green-100 dark:bg-green-900/30',
+            iconBg: 'bg-green-100',
             iconColor: 'text-green-600',
             features: [
                 'Identity verification requirements',

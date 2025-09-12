@@ -218,9 +218,9 @@ const contentData = {
             content: [
                 {
                     type: 'warning',
-                    bgColor: 'bg-red-50 dark:bg-red-900/20',
-                    borderColor: 'border-red-200 dark:border-red-800',
-                    textColor: 'text-red-800 dark:text-red-300',
+                    bgColor: 'bg-red-50',
+                    borderColor: 'border-red-200',
+                    textColor: 'text-red-800',
                     strongText: 'WARNING: ',
                     text: 'Trading CFDs and forex involves significant risk and can result in the loss of your entire investment. You should not invest money that you cannot afford to lose.',
                     fontWeight: 'font-semibold'
@@ -291,7 +291,7 @@ const contentData = {
     contactInfo: {
         title: 'Contact Us',
         description: 'If you have questions about these Terms & Conditions, please contact us:',
-        bgColor: 'bg-gray-50 dark:bg-gray-800',
+        bgColor: 'bg-gray-50',
         details: [
             '<strong>Email:</strong> info@jaazmarkets.com',
             '<strong>Phone:</strong> +971-50-8596-279',
@@ -307,7 +307,7 @@ const contentData = {
 const ctaData = {
     heading: 'Ready to Start Trading?',
     description: 'Open your account today and access global markets with confidence',
-    backgroundColor: 'bg-gray-100 dark:bg-gray-800',
+    backgroundColor: 'bg-gray-100',
     buttons: [
         {
             text: 'Open Live Account',

@@ -14,7 +14,7 @@ export default function LegalContent({ data }) {
     } = data
 
     return (
-        <section className="py-16 bg-white dark:bg-gray-900">
+        <section className="py-16 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
                     {/* Warning Banner (for Risk Disclosure) */}
@@ -39,7 +39,7 @@ export default function LegalContent({ data }) {
                     {/* Introduction */}
                     {introduction && (
                         <div className="mb-12">
-                            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <p className="text-lg text-gray-700 leading-relaxed">
                                 {introduction}
                             </p>
                         </div>
@@ -47,12 +47,12 @@ export default function LegalContent({ data }) {
 
                     {/* Company Information */}
                     {companyInfo && (
-                        <div className="mb-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        <div className="mb-12 p-6 bg-gray-50 rounded-lg">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
                                 Company Information
                             </h2>
                             {companyInfo.map((info, index) => (
-                                <p key={index} className="text-gray-700 dark:text-gray-300 mb-2">
+                                <p key={index} className="text-gray-700 mb-2">
                                     <strong>{info.label}:</strong> {info.value}
                                 </p>
                             ))}
@@ -61,11 +61,11 @@ export default function LegalContent({ data }) {
 
                     {/* Table of Contents */}
                     {tableOfContents && (
-                        <div className="mb-12 p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        <div className="mb-12 p-6 border border-gray-200 rounded-lg">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
                                 Table of Contents
                             </h2>
-                            <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                            <ol className="list-decimal list-inside space-y-2 text-gray-700">
                                 {tableOfContents.map((item, index) => (
                                     <li key={index}>
                                         <a href={`#${item.id}`} className="text-primary-orange hover:underline">
@@ -81,10 +81,10 @@ export default function LegalContent({ data }) {
                     <div className="space-y-12">
                         {sections?.map((section, index) => (
                             <section key={index} id={section.id} className='pt-28 -mt-28'>
-                                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                                <h2 className="text-3xl font-bold text-gray-900 mb-6">
                                     {section.title}
                                 </h2>
-                                <div className="prose max-w-none text-gray-700 dark:text-gray-300">
+                                <div className="prose max-w-none text-gray-700">
                                     {section.content.map((contentItem, contentIndex) => {
                                         if (contentItem.type === 'paragraph') {
                                             return (
@@ -151,21 +151,21 @@ export default function LegalContent({ data }) {
                                         if (contentItem.type === 'table') {
                                             return (
                                                 <div key={contentIndex} className="overflow-x-auto mb-6">
-                                                    <table className="min-w-full border border-gray-200 dark:border-gray-700">
-                                                        <thead className="bg-gray-50 dark:bg-gray-800">
+                                                    <table className="min-w-full border border-gray-200">
+                                                        <thead className="bg-gray-50">
                                                             <tr>
                                                                 {contentItem.headers.map((header, headerIndex) => (
-                                                                    <th key={headerIndex} className="px-4 py-2 text-left font-semibold text-gray-900 dark:text-white">
+                                                                    <th key={headerIndex} className="px-4 py-2 text-left font-semibold text-gray-900">
                                                                         {header}
                                                                     </th>
                                                                 ))}
                                                             </tr>
                                                         </thead>
-                                                        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                                                        <tbody className="divide-y divide-gray-200">
                                                             {contentItem.rows.map((row, rowIndex) => (
                                                                 <tr key={rowIndex}>
                                                                     {row.map((cell, cellIndex) => (
-                                                                        <td key={cellIndex} className="px-4 py-2 text-gray-700 dark:text-gray-300">
+                                                                        <td key={cellIndex} className="px-4 py-2 text-gray-700">
                                                                             {cell}
                                                                         </td>
                                                                     ))}
@@ -187,13 +187,13 @@ export default function LegalContent({ data }) {
                     {/* Contact Information */}
                     {contactInfo && (
                         <div className={`mt-16 p-6 ${contactInfo.bgColor} rounded-lg`}>
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
                                 {contactInfo.title}
                             </h2>
-                            <p className="text-gray-700 dark:text-gray-300 mb-4">
+                            <p className="text-gray-700 mb-4">
                                 {contactInfo.description}
                             </p>
-                            <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                            <div className="space-y-2 text-gray-700">
                                 {contactInfo.details.map((detail, index) => (
                                     <p key={index} dangerouslySetInnerHTML={{ __html: detail }} />
                                 ))}
@@ -203,7 +203,7 @@ export default function LegalContent({ data }) {
 
                     {/* Version History */}
                     {versionHistory && (
-                        <div className="mt-8 text-sm text-gray-600 dark:text-gray-400">
+                        <div className="mt-8 text-sm text-gray-600">
                             {versionHistory.map((version, index) => (
                                 <p key={index}><strong>{version.version}</strong> - {version.details}</p>
                             ))}

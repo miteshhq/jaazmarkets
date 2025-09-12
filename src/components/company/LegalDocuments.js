@@ -10,15 +10,15 @@ export default function LegalDocuments({ data }) {
     const { heading, description, documents, quickLinks, additionalInfo, riskWarning } = data
 
     return (
-        <section id="legal-documents" className="py-16 md:py-24 bg-white dark:bg-gray-900">
+        <section id="legal-documents" className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     {/* Introduction */}
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             {heading}
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                             {description}
                         </p>
                     </div>
@@ -28,16 +28,16 @@ export default function LegalDocuments({ data }) {
                         {documents.map((document, index) => {
                             const IconComp = iconMap[document.iconName] || FileText
                             return (
-                                <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+                                <div key={index} className="bg-gray-50 rounded-xl p-8 border border-gray-200">
                                     <div className="flex items-start mb-6">
                                         <div className={`w-12 h-12 ${document.iconBg} rounded-lg flex items-center justify-center mr-4 flex-shrink-0`}>
                                             <IconComp className={`w-6 h-6 ${document.iconColor}`} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                                            <h3 className="text-xl font-bold text-gray-900 mb-2">
                                                 {document.title}
                                             </h3>
-                                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                            <p className="text-gray-600 text-sm">
                                                 {document.description}
                                             </p>
                                         </div>
@@ -45,7 +45,7 @@ export default function LegalDocuments({ data }) {
 
                                     <div className="space-y-3 mb-6">
                                         {document.features.map((feature, featureIndex) => (
-                                            <div key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                            <div key={featureIndex} className="flex items-center text-sm text-gray-600">
                                                 <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
                                                 {feature}
                                             </div>
@@ -65,8 +65,8 @@ export default function LegalDocuments({ data }) {
                     </div>
 
                     {/* Quick Links to All Documents */}
-                    <div className="bg-gradient-to-r from-primary-orange/10 to-orange-100/10 dark:from-primary-orange/20 dark:to-orange-900/20 rounded-2xl p-8 mb-12">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                    <div className="bg-gradient-to-r from-primary-orange/10 to-orange-100/10 rounded-2xl p-8 mb-12">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                             {quickLinks.heading}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -76,7 +76,7 @@ export default function LegalDocuments({ data }) {
                                     <Link
                                         key={index}
                                         href={link.href}
-                                        className="flex items-center justify-center px-4 py-3 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-orange"
+                                        className="flex items-center justify-center px-4 py-3 bg-white rounded-lg hover:shadow-lg transition text-sm font-medium text-gray-700 hover:text-primary-orange"
                                     >
                                         <IconComp className="w-4 h-4 mr-2" />
                                         {link.text}
@@ -87,21 +87,21 @@ export default function LegalDocuments({ data }) {
                     </div>
 
                     {/* Additional Legal Information */}
-                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-8 mb-12">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 mb-12">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
                             {additionalInfo.heading}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {additionalInfo.sections.map((section, index) => (
                                 <div key={index}>
-                                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                                    <h4 className="font-semibold text-gray-900 mb-3">
                                         {section.title}
                                     </h4>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                                    <p className="text-gray-600 text-sm mb-4">
                                         {section.description}
                                     </p>
                                     {section.features.map((feature, featureIndex) => (
-                                        <div key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                        <div key={featureIndex} className="flex items-center text-sm text-gray-600">
                                             <CheckCircle className="w-4 h-4 text-primary-orange mr-2" />
                                             {feature}
                                         </div>
@@ -112,14 +112,14 @@ export default function LegalDocuments({ data }) {
                     </div>
 
                     {/* Risk Warning */}
-                    <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-8">
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-8">
                         <div className="flex items-start">
                             <AlertTriangle className="w-8 h-8 text-yellow-600 mr-4 flex-shrink-0 mt-1" />
                             <div>
-                                <h4 className="text-lg font-bold text-yellow-800 dark:text-yellow-300 mb-2">
+                                <h4 className="text-lg font-bold text-yellow-800 mb-2">
                                     {riskWarning.title}
                                 </h4>
-                                <p className="text-yellow-700 dark:text-yellow-400 text-sm leading-relaxed">
+                                <p className="text-yellow-700 text-sm leading-relaxed">
                                     <strong>{riskWarning.boldText}</strong> {riskWarning.description}
                                 </p>
                             </div>
