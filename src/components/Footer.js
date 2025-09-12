@@ -6,10 +6,11 @@ export default function Footer() {
         <footer className="bg-gray-900 text-white pt-16 pb-8">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
                     <div>
                         <div className="flex items-center mb-6">
-                            <img src="/images/brand/logo-white.webp" alt="Jazz Markets - Professional Forex Trading Platform" className="h-8 w-auto" loading="lazy" />
+                            <Link href="/" className="flex items-center">
+                                <p className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-orange via-white to-primary-orange">Jaaz Markets</p>
+                            </Link>
                         </div>
                         <p className="text-gray-400 mb-6">
                             Your trusted forex broker with competitive spreads, fast execution, and world-class trading platforms. Trade with power, trade with Jaaz.

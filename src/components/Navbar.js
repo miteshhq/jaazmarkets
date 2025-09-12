@@ -132,7 +132,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center">
-                            <img src="https://res.cloudinary.com/dknrega1a/image/upload/v1755514721/logo_qyvdl9.webp" alt="Jazz Markets - Professional Forex Trading Platform" className="h-8 md:h-10 w-auto" />
+                            <p className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-primary-orange to-orange-700">Jaaz Markets</p>
                         </Link>
                     </div>
 
