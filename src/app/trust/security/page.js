@@ -216,11 +216,17 @@ const ctaData = {
             variant: 'primary',
             icon: 'user',
         },
+        // {
+        //     text: 'View Regulations',
+        //     href: '/trust/regulation',
+        //     variant: 'secondary',
+        //     icon: 'monitor',
+        // },
         {
-            text: 'View Regulations',
-            href: '/trust/regulation',
+            text: 'Try Demo Account',
+            href: '/demo',
             variant: 'secondary',
-            icon: 'monitor',
+            icon: 'smile',
         },
     ],
 }

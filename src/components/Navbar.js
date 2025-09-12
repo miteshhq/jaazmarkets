@@ -53,7 +53,7 @@ const NAVIGATION_CONFIG = {
             { href: '/trading/deposit-withdrawal', label: 'Deposit & Withdrawal', icon: BarChart3, description: 'Fund management' },
             { href: '/trading/hours', label: 'Trading Hours', icon: Globe, description: 'Market hours' },
             { href: '/trust/security', label: 'Security', icon: Shield, description: 'Account security' },
-            { href: '/trust/regulation', label: 'Regulation', icon: Building, description: 'Regulatory compliance' },
+            // { href: '/trust/regulation', label: 'Regulation', icon: Building, description: 'Regulatory compliance' },
             { href: '/trust/cybersecurity', label: 'Cybersecurity', icon: Shield, description: 'Digital security measures' }
         ]
     },

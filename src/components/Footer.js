@@ -212,7 +212,7 @@ export default function Footer() {
                         </ul>
 
                         {/* Trust & Security Badges */}
-                        <div className="mt-6 sm:mt-8">
+                        {/* <div className="mt-6 sm:mt-8">
                             <div className="text-xs sm:text-sm font-semibold text-gray-300 mb-3">Trust &amp; Security</div>
                             <div className="flex flex-wrap gap-2">
                                 <div className="bg-gray-800 px-2 sm:px-3 py-1 sm:py-2 rounded text-xs text-gray-400 border border-gray-700 flex items-center hover:bg-gray-700/50 transition-colors duration-300 group">
@@ -228,7 +228,7 @@ export default function Footer() {
                                     <span>Regulated</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
