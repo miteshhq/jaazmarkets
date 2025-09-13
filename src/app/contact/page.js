@@ -41,8 +41,8 @@ const contactHeroData = {
             hoverBorder: 'hover:border-white',
             iconBg: 'bg-gradient-to-br from-black to-gray-800',
             statusBg: 'bg-primary-orange/20',
-            contact: 'PhonePending',
-            statusInfo: 'Dubai (24/7)',
+            contact: '+1-844-694-2090',
+            statusInfo: 'Gros Islet, Saint Lucia (24/7)',
             statusText: 'text-gray-300',
             buttonStyle: 'bg-gradient-to-r from-black to-gray-800 hover:from-gray-800 hover:to-black',
             buttonText: 'CALL NOW'
@@ -134,7 +134,7 @@ const contactMethodsData = {
             availabilityColor: 'text-gray-500',
             linkStyle: 'bg-primary-orange text-white hover:bg-primary-orange/90',
             buttonText: 'Call Now',
-            buttonLink: 'tel:PhonePending'
+            buttonLink: 'tel:+18446942090'
         },
         {
             title: 'WhatsApp',
@@ -167,12 +167,7 @@ const contactFormData = {
         {
             icon: 'MapPin',
             title: 'Registered Office',
-            content: 'Jaaz Markets LTD<br>Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia<br>Registration Number: HT00324027'
-        },
-        {
-            icon: 'Building',
-            title: 'Physical Office',
-            content: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia'
+            content: 'Jaaz Markets LTD<br>Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia<br>Registration Number: 2025-00595'
         },
         {
             icon: 'Mail',
@@ -182,7 +177,7 @@ const contactFormData = {
         {
             icon: 'Phone',
             title: 'Phone Number',
-            content: 'PhonePending<br>WhatsApp Available'
+            content: '+1-844-694-2090<br>WhatsApp Available'
         },
         {
             icon: 'Clock',

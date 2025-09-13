@@ -200,11 +200,11 @@ export default function Footer() {
                                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange mr-3 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                 <div className="text-gray-400 text-sm sm:text-base">
                                     <a
-                                        href="tel:PhonePending"
+                                        href="tel:+18446942090"
                                         className="hover:text-primary-orange transition-colors duration-300 focus:outline-none focus:underline focus:decoration-primary-orange"
-                                        aria-label="Call PhonePending"
+                                        aria-label="Call +1-844-694-2090"
                                     >
-                                        PhonePending
+                                        +1-844-694-2090
                                     </a>
                                     <div className="text-xs sm:text-sm text-gray-500 mt-1">24/7 Support</div>
                                 </div>

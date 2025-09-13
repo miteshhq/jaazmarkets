@@ -72,7 +72,7 @@ const RegulatoryLicensesData = {
             textColor: 'text-blue-600',
             details: [
                 { label: 'Company Name:', value: 'Jaaz Markets LTD' },
-                { label: 'Registration Number:', value: 'HT00324027' },
+                { label: 'Registration Number:', value: '2025-00595' },
                 { label: 'Status:', value: 'Active', valueClass: 'text-green-600' },
                 { label: 'Registered Office:', value: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia' },
                 { label: 'Jurisdiction:', value: 'Island of Mohéli' }

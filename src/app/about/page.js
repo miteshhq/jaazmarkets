@@ -207,19 +207,12 @@ const globalPresenceData = {
     buttonLink: '/contact',
     offices: [
         {
-            location: 'Comoros Union',
+            location: 'Gros Islet, Saint Lucia',
             type: 'Registered Office',
-            address: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia',
+            address: 'Ground Floor, Rodney Court Building, Rodney Bay',
             iconBg: 'bg-blue-100',
             iconColor: 'text-blue-600'
         },
-        {
-            location: 'Dubai, UAE',
-            type: 'Physical Office',
-            address: 'Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia',
-            iconBg: 'bg-primary-orange/20',
-            iconColor: 'text-primary-orange'
-        }
     ]
 }
 

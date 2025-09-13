@@ -21,7 +21,7 @@ const contentData = {
         titleColor: 'text-red-800',
         textColor: 'text-red-700'
     },
-    introduction: 'This Risk Disclosure Statement is provided by Jaaz Markets LTD (Registration Number: HT00324027) to inform you of the risks associated with trading foreign exchange (Forex) and Contracts for Difference (CFDs) on our platform. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment.',
+    introduction: 'This Risk Disclosure Statement is provided by Jaaz Markets LTD (Registration Number: 2025-00595) to inform you of the risks associated with trading foreign exchange (Forex) and Contracts for Difference (CFDs) on our platform. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment.',
     sections: [
         {
             id: 'leverage-risk',

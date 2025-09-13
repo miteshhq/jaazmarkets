@@ -450,7 +450,7 @@ const contentData = {
         details: [
             '<strong>Compliance Officer</strong>',
             '<strong>Email:</strong> info@jaazmarkets.com',
-            '<strong>Phone:</strong> PhonePending',
+            '<strong>Phone:</strong> +1-844-694-2090',
             '<strong>Address:</strong> Jaaz Markets LTD<br>Ground Floor, Rodney Court Building, Rodney Bay, Gros Islet, Saint Lucia'
         ]
     },
