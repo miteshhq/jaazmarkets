@@ -1,7 +1,6 @@
 // app/platform/overview/page.js
 import StartTradingBanner from '@/components/StartTradingBanner'
 import StartTradingCTA from '@/components/StartTradingCTA'
-import PlatformFeatures from '@/components/PlatformFeatures'
 import ComparisonTable from '@/components/ComparisonTable'
 import AvailablePlatforms from '@/components/AvailablePlatforms'
 import React from 'react'
@@ -10,21 +9,22 @@ import {
     ArrowRight, Check, Brain, RefreshCw, TestTube, Calendar, Code, X
 } from 'lucide-react'
 
-// Data Objects
+// Enhanced Data Objects with Real Images from PDF
 const mt5OverviewData = {
     sections: [
         {
             id: "multi_asset",
             title: "Multi-Asset Trading Platform",
             description: "MetaTrader 5 provides access to Forex, Stocks, Futures, Options, and Bonds all from a single platform. With support for over 1,000 financial instruments, traders can diversify their portfolios and implement sophisticated trading strategies across multiple asset classes.",
-            image: "https://www.metaquotes.net/c/2/0/all_in_one_for_media_kit.jpg",
-            imageAlt: "MetaTrader 5 Multi-Asset Platform",
+            // Image 1: Main desktop interface from PDF
+            image: "/images/mt5-desktop-main-interface.png",
+            imageAlt: "MetaTrader 5 Multi-Asset Platform Interface",
             features: [
-                "Forex currency pairs",
-                "Stock indices and individual stocks",
-                "Commodities and futures contracts",
-                "Cryptocurrency CFDs",
-                "Bonds and options"
+                "50+ Forex currency pairs (Major, Minor, Exotic)",
+                "1000+ Global stocks and indices",
+                "Precious metals and commodities trading",
+                "Cryptocurrency CFDs with 24/7 access",
+                "Government and corporate bonds"
             ],
             highlight: {
                 icon: "target",
@@ -37,54 +37,50 @@ const mt5OverviewData = {
             id: "trading_system",
             title: "Advanced Trading System",
             description: "The platform delivers a powerful trading system with Depth of Market (DOM) feature, providing separate accounting of orders and trades. It supports both netting and hedging position accounting systems with four execution modes: Instant, Request, Market, and Exchange.",
+            // Image 2: Order execution and DOM from PDF
+            image: "/images/mt5-order-execution-dom.png",
+            imageAlt: "MT5 Advanced Trading System with Market Depth",
             features: [
                 "Market Depth (Level II) data access",
                 "Netting and hedging account types",
-                "Multiple execution modes",
-                "Advanced order management",
-                "Partial order filling support"
+                "4 execution modes: Instant, Request, Market, Exchange",
+                "6 pending order types for advanced strategies",
+                "Partial order filling support",
+                "One-click trading from charts"
             ],
             highlight: {
                 icon: "zap",
-                value: "4",
-                label: "Execution Modes",
+                value: "<50ms",
+                label: "Execution Speed",
                 bgColor: "bg-blue-600"
-            },
-            visual: {
-                icon: "activity",
-                title: "Market Depth",
-                subtitle: "Level II Data Access",
-                bgGradient: "from-blue-50 to-indigo-100"
             }
         },
         {
             id: "analysis_tools",
             title: "Superior Analysis Tools",
             description: "MetaTrader 5 allows simultaneous opening of up to 100 currency and stock price charts with 21 timeframes for comprehensive analysis. More than 80 technical indicators and analytical tools provide deep market insights.",
+            // Image 3: Advanced charting with multiple indicators from PDF
+            image: "/images/mt5-advanced-charting.png",
+            imageAlt: "MT5 Professional Analysis and Charting Tools",
             features: [
                 "21 chart timeframes (M1 to MN1)",
                 "80+ built-in technical indicators",
-                "38 technical analysis objects",
-                "Custom indicators support",
-                "Advanced charting capabilities"
+                "38 graphical objects and drawing tools",
+                "Custom indicators with MQL5 support",
+                "Unlimited simultaneous charts",
+                "Advanced pattern recognition"
             ],
             highlight: {
                 icon: "trending-up",
-                value: "21",
-                label: "Timeframes",
+                value: "80+",
+                label: "Indicators",
                 bgColor: "bg-green-600"
-            },
-            visual: {
-                icon: "chart-column",
-                title: "Advanced Charts",
-                subtitle: "80+ Technical Indicators",
-                bgGradient: "from-green-50 to-emerald-100"
             }
         }
     ],
     platformAvailability: {
         title: "Available Across All Platforms",
-        description: "Access the full power of MetaTrader 5 on desktop, web, and mobile with seamless synchronization.",
+        description: "Access the full power of MetaTrader 5 on desktop, web, and mobile with seamless synchronization across all your devices.",
         platforms: [
             {
                 icon: "monitor",
@@ -93,6 +89,8 @@ const mt5OverviewData = {
                 devices: "Windows • macOS • Linux",
                 bgColor: "bg-blue-100",
                 iconColor: "text-blue-600",
+                // Image 4: Complete desktop platform from PDF
+                image: "/images/mt5-desktop-complete.png"
             },
             {
                 icon: "globe",
@@ -101,6 +99,7 @@ const mt5OverviewData = {
                 devices: "Chrome • Safari • Firefox • Edge",
                 bgColor: "bg-primary-orange/10",
                 iconColor: "text-primary-orange",
+                image: "/images/mt5-order-execution-dom.png"
             },
             {
                 icon: "smartphone",
@@ -109,6 +108,8 @@ const mt5OverviewData = {
                 devices: "iOS • Android • Huawei",
                 bgColor: "bg-green-100",
                 iconColor: "text-green-600",
+                // Image 5: Mobile interface from PDF
+                image: "/images/mt5-mobile-interface.png"
             }
         ]
     }
@@ -121,42 +122,42 @@ const features2025Data = {
         {
             icon: "brain",
             title: "AI-Powered Trade Assistant",
-            description: "Tracks trading history, live news feeds, and signals to offer smart trade suggestions and market sentiment analysis.",
+            description: "Advanced market analysis with machine learning algorithms that track trading history, live news feeds, and market signals to provide intelligent trade suggestions.",
             bgColor: "bg-purple-50",
             borderColor: "border-purple-200"
         },
         {
             icon: "zap",
             title: "Multi-Symbol Backtesting",
-            description: "Test strategies across forex, stocks, and crypto simultaneously. 30% faster testing speed than previous versions.",
+            description: "Test strategies across forex, stocks, and crypto simultaneously with 30% faster processing speed using advanced multi-threading technology.",
             bgColor: "bg-blue-50",
             borderColor: "border-blue-200"
         },
         {
             icon: "refresh-cw",
             title: "Real-Time Device Sync",
-            description: "Seamless synchronization across up to 5 devices per account with no data loss or duplicate trades.",
+            description: "Seamless synchronization across up to 5 devices per account with instant updates and zero data loss or duplicate trades.",
             bgColor: "bg-green-50",
             borderColor: "border-green-200"
         },
         {
             icon: "test-tube",
             title: "Enhanced Strategy Tester",
-            description: "Advanced multi-threaded testing with improved speed and comprehensive simulation outputs.",
+            description: "Advanced multi-threaded testing environment with cloud computing support for faster optimization and comprehensive simulation outputs.",
             bgColor: "bg-orange-50",
             borderColor: "border-orange-200"
         },
         {
             icon: "calendar",
             title: "Built-in Economic Calendar",
-            description: "Real-time macroeconomic news and events directly integrated into the platform for fundamental analysis.",
+            description: "Real-time macroeconomic news and events directly integrated into the platform with impact predictions and volatility forecasts.",
             bgColor: "bg-red-50",
             borderColor: "border-red-200"
         },
         {
             icon: "code",
             title: "MQL5 Programming Language",
-            description: "Advanced object-oriented programming language for creating sophisticated Expert Advisors and custom indicators.",
+            description: "Enhanced object-oriented programming language with improved debugging tools and extensive library support for creating sophisticated Expert Advisors.",
             bgColor: "bg-indigo-50",
             borderColor: "border-indigo-200"
         }
@@ -165,22 +166,22 @@ const features2025Data = {
 
 const technicalSpecsData = {
     title: "Technical Specifications",
-    description: "Built on advanced technology with institutional-grade performance and reliability standards.",
+    description: "Built on advanced 64-bit architecture with institutional-grade performance and reliability standards for professional trading.",
     categories: [
         {
             title: "Platform Architecture",
             items: [
                 "64-bit multi-threaded platform",
-                "Low-latency execution infrastructure",
-                "Optimized for modern hardware",
+                "Sub-50ms execution latency",
+                "99.9% uptime reliability",
                 "Cross-platform compatibility"
             ]
         },
         {
             title: "Analysis Tools",
             items: [
-                "38 built-in technical indicators",
-                "44 graphical objects",
+                "80+ built-in technical indicators",
+                "38 graphical objects",
                 "21 chart timeframes",
                 "Unlimited charts support"
             ]
@@ -246,26 +247,35 @@ const bannerProps = {
     ],
 }
 
-// Inline MT5 Platform Overview Component
+// Enhanced MT5 Platform Overview Component with Real Images
 const MT5PlatformOverview = ({ data }) => {
     return (
         <section className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Hero Section with MT5 Logo */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        MetaTrader 5 Platform Overview
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        The comprehensive trading solution that has become the new industry standard, driven by pioneering technological solutions and constant updates.
+                    <div className="flex items-center justify-center mb-6">
+                        {/* MT5 Logo - Image 6 */}
+                        <img
+                            src="/images/metatrader5-sign.svg"
+                            alt="MetaTrader 5 Logo"
+                            className="w-12 h-12 mr-3"
+                        />
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                            MetaTrader 5 Platform Overview
+                        </h2>
+                    </div>
+                    <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        The comprehensive trading solution that has become the new industry standard, driven by pioneering technological solutions and constant updates. Experience professional-grade trading with institutional performance.
                     </p>
                 </div>
 
                 {data.sections.map((section, index) => (
                     <div key={section.id} className="mb-20">
-                        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                             }`}>
                             {/* Content */}
-                            <div className={index % 2 === 1 ? 'order-2 lg:order-1' : ''}>
+                            <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                                     {section.title}
                                 </h3>
@@ -274,85 +284,69 @@ const MT5PlatformOverview = ({ data }) => {
                                 </p>
                                 <ul className="space-y-4">
                                     {section.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center">
+                                        <li key={idx} className="flex items-start">
                                             <div className={`w-6 h-6 ${section.id === 'multi_asset' ? 'bg-primary-orange/20' :
                                                 section.id === 'trading_system' ? 'bg-blue-100' : 'bg-green-100'
-                                                } rounded-full flex items-center justify-center mr-3`}>
-                                                <div className={`w-2 h-2 ${section.id === 'multi_asset' ? 'bg-primary-orange' :
+                                                } rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0`}>
+                                                <div className={`w-2.5 h-2.5 ${section.id === 'multi_asset' ? 'bg-primary-orange' :
                                                     section.id === 'trading_system' ? 'bg-blue-600' : 'bg-green-600'
                                                     } rounded-full`}></div>
                                             </div>
-                                            <span className="text-gray-700">{feature}</span>
+                                            <span className="text-gray-700 leading-relaxed">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            {/* Visual */}
-                            <div className={`relative ${index % 2 === 1 ? 'order-1 lg:order-2' : ''}`}>
-                                {section.image ? (
-                                    // Image for first section
-                                    <>
-                                        <img
-                                            src={section.image}
-                                            alt={section.imageAlt}
-                                            className="rounded-2xl shadow-2xl"
-                                        />
-                                        <div className={`absolute -bottom-6 -left-6 ${section.highlight.bgColor} text-white p-4 rounded-xl shadow-lg`}>
-                                            <div className="flex items-center">
-                                                {getIcon(section.highlight.icon)}
-                                                <div className="ml-2">
-                                                    <div className="font-bold">{section.highlight.value}</div>
-                                                    <div className="text-sm opacity-90">{section.highlight.label}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </>
-                                ) : (
-                                    // Visual for other sections
-                                    <>
-                                        <div className={`bg-gradient-to-br ${section.visual.bgGradient} rounded-2xl p-8 h-80 flex items-center justify-center`}>
-                                            <div className="text-center">
-                                                {getIcon(section.visual.icon, "w-20 h-20 text-blue-600 mx-auto mb-4")}
-                                                <h4 className="text-xl font-bold text-gray-900 mb-2">{section.visual.title}</h4>
-                                                <p className="text-gray-600">{section.visual.subtitle}</p>
-                                            </div>
-                                        </div>
-                                        <div className={`absolute ${index % 2 === 1 ? '-bottom-6 -left-6' : '-top-6 -right-6'} ${section.highlight.bgColor} text-white p-4 rounded-xl shadow-lg`}>
-                                            <div className="flex items-center">
-                                                {getIcon(section.highlight.icon)}
-                                                <div className="ml-2">
-                                                    <div className="font-bold">{section.highlight.value}</div>
-                                                    <div className="text-sm opacity-90">{section.highlight.label}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </>
-                                )}
+                            {/* Real Image from PDF */}
+                            <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                                <img
+                                    src={section.image}
+                                    alt={section.imageAlt}
+                                    className="w-full rounded-2xl shadow-2xl border border-gray-200"
+                                />
+                                <div className={`absolute -bottom-6 -right-6 ${section.highlight.bgColor} text-white p-6 rounded-xl shadow-lg`}>
+                                    <div className="text-center">
+                                        {getIcon(section.highlight.icon, "w-8 h-8 mx-auto mb-2")}
+                                        <div className="text-xl font-bold">{section.highlight.value}</div>
+                                        <div className="text-sm opacity-90">{section.highlight.label}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 ))}
 
-                {/* Platform Availability */}
-                <div className="bg-gray-50 rounded-3xl p-8 md:p-12">
+                {/* Enhanced Platform Availability with Real Images */}
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 mt-16">
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                             {data.platformAvailability.title}
                         </h3>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                             {data.platformAvailability.description}
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {data.platformAvailability.platforms.map((platform, index) => (
-                            <div key={index} className="text-center">
-                                <div className={`w-16 h-16 ${platform.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                                    {getIcon(platform.icon, `w-8 h-8 ${platform.iconColor}`)}
+                            <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                                <div className="text-center mb-6">
+                                    <div className={`w-16 h-16 ${platform.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                                        {getIcon(platform.icon, `w-8 h-8 ${platform.iconColor}`)}
+                                    </div>
+                                    <h4 className="text-xl font-bold text-gray-900 mb-2">{platform.title}</h4>
+                                    <p className="text-gray-600 mb-4">{platform.description}</p>
+                                    <div className="text-sm text-gray-500 font-medium">{platform.devices}</div>
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-2">{platform.title}</h4>
-                                <p className="text-gray-600 mb-4">{platform.description}</p>
-                                <div className="text-sm text-gray-500">{platform.devices}</div>
+
+                                {/* Real Platform Images */}
+                                {platform.image && (
+                                    <img
+                                        src={platform.image}
+                                        alt={`${platform.title} interface`}
+                                        className="w-full rounded-xl shadow-md"
+                                    />
+                                )}
                             </div>
                         ))}
                     </div>
@@ -362,25 +356,25 @@ const MT5PlatformOverview = ({ data }) => {
     )
 }
 
-// Inline 2025 Latest Features Component
+// Enhanced 2025 Features with Hero Image
 const Latest2025Features = ({ data }) => {
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-indigo-50 to-purple-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                         {data.title}
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                         {data.description}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
                     {data.features.map((feature, index) => (
                         <div
                             key={index}
-                            className={`${feature.bgColor} ${feature.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                            className={`${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105`}
                         >
                             <div className="mb-4">
                                 {getIcon(feature.icon, "w-12 h-12 text-gray-700")}
@@ -395,31 +389,31 @@ const Latest2025Features = ({ data }) => {
     )
 }
 
-// Inline Technical Specifications Component  
+// Enhanced Technical Specifications with Hero Image
 const TechnicalSpecifications = ({ data }) => {
     return (
         <section className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                         {data.title}
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                         {data.description}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
                     {data.categories.map((category, index) => (
-                        <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                            <h3 className="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                        <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 hover:shadow-lg transition-shadow border border-gray-200">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-gray-300">
                                 {category.title}
                             </h3>
                             <ul className="space-y-3">
                                 {category.items.map((item, itemIndex) => (
                                     <li key={itemIndex} className="flex items-start">
                                         {getIcon('check', "w-5 h-5 text-primary-orange mr-2 mt-0.5 flex-shrink-0")}
-                                        <span className="text-gray-600 text-sm">{item}</span>
+                                        <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -431,63 +425,7 @@ const TechnicalSpecifications = ({ data }) => {
     )
 }
 
-// Updated Platform Features Data
-const PlatformFeaturesData = {
-    heading: 'Why Choose MetaTrader 5',
-    description: 'MT5 is the ultimate trading platform, offering advanced features and superior performance for professional traders worldwide.',
-    features: [
-        {
-            title: 'Lightning Speed',
-            description: 'Execute trades in under 50ms with our advanced infrastructure and optimized trading servers.',
-            bgColor: 'bg-primary-orange/10',
-            iconColor: 'text-primary-orange',
-            icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-            benefits: ['Sub-50ms execution', 'No requotes', 'Minimal slippage']
-        },
-        {
-            title: 'Advanced Charting',
-            description: 'Professional charting tools with comprehensive technical analysis capabilities.',
-            bgColor: 'bg-blue-100',
-            iconColor: 'text-blue-600',
-            icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-            benefits: ['80+ technical indicators', 'Multiple timeframes', 'Custom indicators']
-        },
-        {
-            title: 'Multi-Device Access',
-            description: 'Trade seamlessly across all your devices with synchronized accounts and settings.',
-            bgColor: 'bg-purple-100',
-            iconColor: 'text-purple-600',
-            icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z',
-            benefits: ['Desktop & mobile', 'Web terminal', 'Synchronized settings']
-        },
-        {
-            title: 'Expert Advisors',
-            description: 'Automate your trading strategies with powerful Expert Advisors and algorithmic trading.',
-            bgColor: 'bg-green-100',
-            iconColor: 'text-green-600',
-            icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
-            benefits: ['MQL5 programming', 'Automated trading', 'Strategy testing']
-        },
-        {
-            title: 'Market Depth',
-            description: 'Access Level II pricing data and see the full market depth for better trading decisions.',
-            bgColor: 'bg-orange-100',
-            iconColor: 'text-orange-600',
-            icon: 'M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z',
-            benefits: ['DOM (Depth of Market)', 'Level II data', 'Order book']
-        },
-        {
-            title: 'Economic Calendar',
-            description: 'Stay informed with integrated economic calendar and market news directly in the platform.',
-            bgColor: 'bg-red-100',
-            iconColor: 'text-red-600',
-            icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-            benefits: ['Real-time news', 'Economic events', 'Market analysis']
-        }
-    ]
-}
-
-// Comparison Table Data
+// Comparison Table Data (keeping original)
 const ComparisonTableData = {
     heading: 'MT5 vs MT4 Comparison',
     description: 'See why MT5 is the superior choice for modern traders with enhanced features and capabilities.',
@@ -530,27 +468,27 @@ const ComparisonTableData = {
     ]
 }
 
-// Available Platforms Data
+// Available Platforms Data (keeping original)
 const AvailablePlatformsData = {
-    heading: 'Available Platforms',
-    description: 'Access MT5 across all your devices. Trade anywhere, anytime with seamless synchronization.',
+    heading: 'Get Started with MT5',
+    description: 'Choose your preferred platform and start trading with the world\'s leading trading software.',
     platforms: [
         {
-            title: 'Desktop App',
-            description: 'Full-featured platform for Windows and macOS with advanced tools.',
+            title: 'Desktop Download',
+            description: 'Full-featured platform for Windows, macOS, and Linux with all professional tools.',
             bgColor: 'bg-blue-100',
             iconColor: 'text-blue-600',
             icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-            buttonText: 'Learn More',
+            buttonText: 'Download Free',
             link: '/platform/desktop'
         },
         {
             title: 'Web Terminal',
-            description: 'Trade directly from your browser without any downloads required.',
+            description: 'Trade instantly from your browser without any download required.',
             bgColor: 'bg-primary-orange/10',
             iconColor: 'text-primary-orange',
             icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9V3m0 9l-3 3m0-3l3 3',
-            buttonText: 'Launch Now',
+            buttonText: 'Launch Web Terminal',
             link: '/platform/web'
         },
         {
@@ -574,7 +512,7 @@ const AvailablePlatformsData = {
     ]
 }
 
-// CTA Data
+// CTA Data (keeping original)
 const ctaButtons = [
     {
         text: 'Open Live Account',
@@ -596,12 +534,11 @@ const ctaData = {
 
 const page = () => {
     return (
-        <main>
+        <main className='overflow-x-hidden'>
             <StartTradingBanner {...bannerProps} />
             <MT5PlatformOverview data={mt5OverviewData} />
             <Latest2025Features data={features2025Data} />
             <TechnicalSpecifications data={technicalSpecsData} />
-            <PlatformFeatures data={PlatformFeaturesData} />
             <ComparisonTable data={ComparisonTableData} />
             <AvailablePlatforms data={AvailablePlatformsData} />
             <StartTradingCTA {...ctaData} />
