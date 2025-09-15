@@ -83,7 +83,7 @@ const ChooseAccountType = () => {
                                 $500 minimum deposit
                             </li>
                         </ul>
-                        <a href="https://client.jaazmarkets.com/register" className="block w-full text-center py-3 px-4 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition font-medium">
+                        <a href="https://client.jaazmarkets.com/account?tab=register" className="block w-full text-center py-3 px-4 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition font-medium">
                             Open Account
                         </a>
                     </div>

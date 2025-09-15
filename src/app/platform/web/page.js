@@ -178,7 +178,7 @@ const ctaProps = {
         },
         {
             text: "Open Account",
-            href: "https://client.jaazmarkets.com/register",
+            href: "https://client.jaazmarkets.com/account?tab=register",
             variant: "secondary",
             icon: "user"
         }

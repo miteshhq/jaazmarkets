@@ -22,7 +22,7 @@ const StartTradingBanner = (props) => {
     const defaultButtons = [
         {
             text: "Start Trading Today",
-            link: "https://client.jaazmarkets.com/register",
+            link: "https://client.jaazmarkets.com/account?tab=register",
             variant: "primary",
             icon: "arrow"
         },

@@ -131,7 +131,7 @@ const page = () => {
         buttons: [
             {
                 text: 'Open Live Account',
-                href: 'https://client.jaazmarkets.com/register',
+                href: 'https://client.jaazmarkets.com/account?tab=register',
                 variant: 'primary',
                 icon: 'user',
             },

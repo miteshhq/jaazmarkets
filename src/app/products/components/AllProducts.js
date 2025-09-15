@@ -154,7 +154,7 @@ const AllProducts = () => {
 
 
                         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-                            <a href="https://client.jaazmarkets.com/register" target="_blank" className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-orange to-orange-700 hover:from-primary-orange-dark hover:to-primary-orange text-white text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                            <a href="https://client.jaazmarkets.com/account?tab=register" target="_blank" className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-orange to-orange-700 hover:from-primary-orange-dark hover:to-primary-orange text-white text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
                                 Start Trading Today
                                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -580,7 +580,7 @@ const AllProducts = () => {
                             Join thousands of traders who choose Jazz Markets for professional trading conditions across all asset classes.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://client.jaazmarkets.com/register" target="_blank" className="inline-flex items-center px-8 py-4 bg-white text-primary-orange font-medium rounded-lg hover:bg-gray-100 transition text-lg">
+                            <a href="https://client.jaazmarkets.com/account?tab=register" target="_blank" className="inline-flex items-center px-8 py-4 bg-white text-primary-orange font-medium rounded-lg hover:bg-gray-100 transition text-lg">
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>

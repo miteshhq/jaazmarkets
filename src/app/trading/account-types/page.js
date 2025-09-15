@@ -32,7 +32,7 @@ const AccountTypesComparisonData = {
                 'Educational resources'
             ],
             buttonText: 'Open Standard Account',
-            buttonHref: 'https://client.jaazmarkets.com/register',
+            buttonHref: 'https://client.jaazmarkets.com/account?tab=register',
             buttonColor: 'border-blue-600',
             buttonTextColor: 'text-blue-600',
             buttonHoverBg: 'bg-blue-600'
@@ -61,7 +61,7 @@ const AccountTypesComparisonData = {
                 'Advanced trading tools'
             ],
             buttonText: 'Open Raw Account',
-            buttonHref: 'https://client.jaazmarkets.com/register'
+            buttonHref: 'https://client.jaazmarkets.com/account?tab=register'
         },
         {
             name: 'Pro Account',
@@ -85,7 +85,7 @@ const AccountTypesComparisonData = {
                 'Exclusive market analysis'
             ],
             buttonText: 'Open Pro Account',
-            buttonHref: 'https://client.jaazmarkets.com/register',
+            buttonHref: 'https://client.jaazmarkets.com/account?tab=register',
             buttonColor: 'border-purple-600',
             buttonTextColor: 'text-purple-600',
             buttonHoverBg: 'bg-purple-600'
@@ -155,7 +155,7 @@ const ctaData = {
     buttons: [
         {
             text: 'Open Live Account',
-            href: 'https://client.jaazmarkets.com/register',
+            href: 'https://client.jaazmarkets.com/account?tab=register',
             variant: 'primary',
             icon: 'user',
         },

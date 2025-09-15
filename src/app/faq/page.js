@@ -13,7 +13,7 @@ const bannerProps = {
         },
         {
             text: "Open Live Account",
-            link: "https://client.jaazmarkets.com/register",
+            link: "https://client.jaazmarkets.com/account?tab=register",
             variant: "secondary",
             icon: "smile"
         }
@@ -125,7 +125,7 @@ const categoryFAQData = {
             },
             {
                 text: 'Open Live Account',
-                href: 'https://client.jaazmarkets.com/register',
+                href: 'https://client.jaazmarkets.com/account?tab=register',
                 style: 'border border-primary-orange text-primary-orange hover:bg-primary-orange hover:text-white',
                 target: '_blank'
             }
@@ -145,7 +145,7 @@ const ctaData = {
         },
         {
             text: "Open Live Account",
-            href: "https://client.jaazmarkets.com/register",
+            href: "https://client.jaazmarkets.com/account?tab=register",
             variant: "secondary",
             icon: "smile"
         }

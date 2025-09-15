@@ -57,7 +57,7 @@ const StartTradingSteps = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="https://client.jaazmarkets.com/register" className="inline-flex items-center px-8 py-4 bg-primary-orange text-white font-semibold rounded-lg hover:bg-orange-600 transition text-lg">
+                    <a href="https://client.jaazmarkets.com/account?tab=register" className="inline-flex items-center px-8 py-4 bg-primary-orange text-white font-semibold rounded-lg hover:bg-orange-600 transition text-lg">
                         Start Trading Now
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>

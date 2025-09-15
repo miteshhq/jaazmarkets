@@ -268,7 +268,7 @@ export default function GlossaryPage() {
 
     const bannerProps = {
         buttons: [
-            { text: "Start Trading", link: "https://client.jaazmarkets.com/register", variant: "primary", icon: "arrow" },
+            { text: "Start Trading", link: "https://client.jaazmarkets.com/account?tab=register", variant: "primary", icon: "arrow" },
             { text: "Browse Glossary", link: "#alphabet-nav", variant: "secondary", icon: "smile" }
         ],
     };

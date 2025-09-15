@@ -123,8 +123,8 @@ const SINGLE_LINKS = [
 ];
 
 const CTA_BUTTONS = {
-    login: { href: 'https://client.jaazmarkets.com/login', label: 'Login', icon: LogIn, variant: 'secondary' },
-    register: { href: 'https://client.jaazmarkets.com/register', label: 'Start Trading', icon: TrendingUp, variant: 'primary' }
+    login: { href: 'https://client.jaazmarkets.com/account?tab=login', label: 'Login', icon: LogIn, variant: 'secondary' },
+    register: { href: 'https://client.jaazmarkets.com/account?tab=register', label: 'Start Trading', icon: TrendingUp, variant: 'primary' }
 };
 
 export default function Navbar() {

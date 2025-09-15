@@ -7,7 +7,7 @@ const bannerProps = {
     buttons: [
         {
             text: "Open Live Account",
-            link: "https://client.jaazmarkets.com/register",
+            link: "https://client.jaazmarkets.com/account?tab=register",
             variant: "primary",
             icon: "arrow"
         },

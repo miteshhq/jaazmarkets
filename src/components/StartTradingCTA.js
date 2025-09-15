@@ -8,7 +8,7 @@ const StartTradingCTA = ({
     buttons = [
         {
             text: "Open Live Account",
-            href: "https://client.jaazmarkets.com/register",
+            href: "https://client.jaazmarkets.com/account?tab=register",
             target: "_self",
             variant: "primary",
             icon: "user",

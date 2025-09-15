@@ -146,7 +146,7 @@ const WhyChooseUs = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <a href="https://client.jaazmarkets.com/register" className="block w-full py-4 px-6 bg-white text-primary-orange rounded-xl hover:bg-gray-100 transition font-bold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                        <a href="https://client.jaazmarkets.com/account?tab=register" className="block w-full py-4 px-6 bg-white text-primary-orange rounded-xl hover:bg-gray-100 transition font-bold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                                             Create Live Account
                                         </a>
                                         <a href="/demo" className="block w-full py-4 px-6 bg-white/20 backdrop-blur-sm text-white rounded-xl hover:bg-white/30 transition font-semibold text-center border border-white/30">

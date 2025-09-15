@@ -106,7 +106,7 @@ const Page = () => {
         heading: 'Ready to Start Trading Forex?',
         description: 'Join thousands of traders who choose Jaaz Markets for competitive spreads, fast execution, and professional support.',
         buttons: [
-            { href: 'https://client.jaazmarkets.com/register', text: 'Open Live Account', variant: 'primary', icon: 'user' },
+            { href: 'https://client.jaazmarkets.com/account?tab=register', text: 'Open Live Account', variant: 'primary', icon: 'user' },
             { href: '/demo', text: 'Try Demo Account', variant: 'secondary', icon: 'monitor' },
         ],
     };

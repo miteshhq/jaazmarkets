@@ -468,7 +468,7 @@ const ctaData = {
     buttons: [
         {
             text: 'Open Account',
-            href: 'https://client.jaazmarkets.com/register',
+            href: 'https://client.jaazmarkets.com/account?tab=register',
             style: 'bg-primary-orange text-white hover:bg-primary-orange/90'
         },
         {
