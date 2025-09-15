@@ -234,7 +234,7 @@ const bannerProps = {
     buttons: [
         {
             text: "Open Live Account",
-            link: "/register",
+            link: "https://client.jaazmarkets.com/register",
             variant: "primary",
             icon: "arrow"
         },
@@ -516,7 +516,7 @@ const AvailablePlatformsData = {
 const ctaButtons = [
     {
         text: 'Open Live Account',
-        href: '/register',
+        href: 'https://client.jaazmarkets.com/register',
         variant: 'primary'
     },
     {

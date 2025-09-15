@@ -41,12 +41,12 @@ const PopularCurrencies = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                    <Link href="/trading/crypto" className="inline-flex items-center px-8 py-3 bg-white text-primary-orange font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                    <a href="/trading/crypto" className="inline-flex items-center px-8 py-3 bg-white text-primary-orange font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                         Start Crypto Trading
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

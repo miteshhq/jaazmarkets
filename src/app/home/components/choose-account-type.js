@@ -45,9 +45,9 @@ const ChooseAccountType = () => {
                                 $100 minimum deposit
                             </li>
                         </ul>
-                        <Link href="/trading/account-types" className="block w-full text-center py-3 px-4 border border-gray-300  text-gray-700  rounded-lg hover:bg-gray-50 :bg-gray-700 transition font-medium">
+                        <a href="/trading/account-types" className="block w-full text-center py-3 px-4 border border-gray-300  text-gray-700  rounded-lg hover:bg-gray-50 :bg-gray-700 transition font-medium">
                             Learn More
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="bg-white  rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border-2 border-primary-orange relative">
@@ -83,9 +83,9 @@ const ChooseAccountType = () => {
                                 $500 minimum deposit
                             </li>
                         </ul>
-                        <Link href="/register" className="block w-full text-center py-3 px-4 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition font-medium">
+                        <a href="https://client.jaazmarkets.com/register" className="block w-full text-center py-3 px-4 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition font-medium">
                             Open Account
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="bg-white  rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-gray-200 ">
@@ -118,9 +118,9 @@ const ChooseAccountType = () => {
                                 $10,000 minimum deposit
                             </li>
                         </ul>
-                        <Link href="/trading/account-types" className="block w-full text-center py-3 px-4 border border-gray-300  text-gray-700  rounded-lg hover:bg-gray-50 :bg-gray-700 transition font-medium">
+                        <a href="/trading/account-types" className="block w-full text-center py-3 px-4 border border-gray-300  text-gray-700  rounded-lg hover:bg-gray-50 :bg-gray-700 transition font-medium">
                             Learn More
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="mt-12 text-center">

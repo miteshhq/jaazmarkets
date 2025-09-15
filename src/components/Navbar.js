@@ -123,8 +123,8 @@ const SINGLE_LINKS = [
 ];
 
 const CTA_BUTTONS = {
-    login: { href: '/login', label: 'Login', icon: LogIn, variant: 'secondary' },
-    register: { href: '/register', label: 'Start Trading', icon: TrendingUp, variant: 'primary' }
+    login: { href: 'https://client.jaazmarkets.com/login', label: 'Login', icon: LogIn, variant: 'secondary' },
+    register: { href: 'https://client.jaazmarkets.com/register', label: 'Start Trading', icon: TrendingUp, variant: 'primary' }
 };
 
 export default function Navbar() {
@@ -255,7 +255,7 @@ export default function Navbar() {
                                             {section.title}
                                         </h3>
                                         {section.items.map((item) => (
-                                            <Link
+                                            <a
                                                 key={item.href}
                                                 href={item.href}
                                                 className="flex items-center space-x-3 px-3 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
@@ -263,7 +263,7 @@ export default function Navbar() {
                                             >
                                                 {renderIcon(item.icon, "w-4 h-4 text-primary-orange")}
                                                 <span className="text-sm">{item.label}</span>
-                                            </Link>
+                                            </a>
                                         ))}
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@ export default function Navbar() {
                         ) : (
                             // Render regular items
                             config.items.map((item) => (
-                                <Link
+                                <a
                                     key={item.href}
                                     href={item.href}
                                     className="flex items-center space-x-3 px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200 mx-2"
@@ -279,7 +279,7 @@ export default function Navbar() {
                                 >
                                     {renderIcon(item.icon, "w-4 h-4 text-primary-orange")}
                                     <span className="text-sm">{item.label}</span>
-                                </Link>
+                                </a>
                             ))
                         )}
                     </div>
@@ -290,7 +290,7 @@ export default function Navbar() {
 
     const renderDesktopLink = (link) => {
         return (
-            <Link
+            <a
                 key={link.href}
                 href={link.href}
                 className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-orange-600 focus:text-orange-600 transition-colors duration-200 rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-200"
@@ -298,7 +298,7 @@ export default function Navbar() {
             >
                 {renderIcon(link.icon, "w-4 h-4 text-primary-orange")}
                 <span className="font-medium">{link.label}</span>
-            </Link>
+            </a>
         );
     };
 
@@ -306,7 +306,7 @@ export default function Navbar() {
         const isPrimary = button.variant === 'primary';
 
         return (
-            <Link
+            <a
                 key={button.href}
                 href={button.href}
                 className={`inline-flex items-center space-x-2 px-6 py-2.5 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${isPrimary
@@ -316,7 +316,7 @@ export default function Navbar() {
             >
                 {renderIcon(button.icon, "w-4 h-4")}
                 <span>{button.label}</span>
-            </Link>
+            </a>
         );
     };
 
@@ -346,7 +346,7 @@ export default function Navbar() {
                                         {section.title}
                                     </h4>
                                     {section.items.map((item) => (
-                                        <Link
+                                        <a
                                             key={item.href}
                                             href={item.href}
                                             className="flex items-center space-x-3 px-2 py-0.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
@@ -354,13 +354,13 @@ export default function Navbar() {
                                         >
                                             {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
                                             <span className="text-sm">{item.label}</span>
-                                        </Link>
+                                        </a>
                                     ))}
                                 </div>
                             ))
                         ) : (
                             config.items.map((item) => (
-                                <Link
+                                <a
                                     key={item.href}
                                     href={item.href}
                                     className="flex items-center space-x-3 px-2 py-0.5 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors duration-200"
@@ -368,7 +368,7 @@ export default function Navbar() {
                                 >
                                     {renderIcon(item.icon, "w-4 h-4 text-orange-400")}
                                     <span className="text-sm">{item.label}</span>
-                                </Link>
+                                </a>
                             ))
                         )}
                     </div>
@@ -380,14 +380,14 @@ export default function Navbar() {
     const renderMobileLink = (link) => {
         return (
             <div key={link.href} className="border-b border-gray-100">
-                <Link
+                <a
                     href={link.href}
                     className="flex items-center space-x-3 px-4 py-4 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
                     onClick={closeMobileMenu}
                 >
                     {renderIcon(link.icon, "w-5 h-5 text-primary-orange")}
                     <span className="font-medium">{link.label}</span>
-                </Link>
+                </a>
             </div>
         );
     };
@@ -401,11 +401,11 @@ export default function Navbar() {
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <Link href="/" className="flex-shrink-0">
+                    <a href="/" className="flex-shrink-0">
                         <span className="text-xl px-0.5 font-black uppercase tracking-tighter bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 bg-clip-text text-transparent transition-all duration-300">
                             Jaaz Markets
                         </span>
-                    </Link>
+                    </a>
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-0">
@@ -442,7 +442,7 @@ export default function Navbar() {
                         {/* Mobile CTA Buttons */}
                         <div className="p-4 space-y-3">
                             {Object.values(CTA_BUTTONS).map((button) => (
-                                <Link
+                                <a
                                     key={button.href}
                                     href={button.href}
                                     className={`w-full inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${button.variant === 'primary'
@@ -453,7 +453,7 @@ export default function Navbar() {
                                 >
                                     {renderIcon(button.icon, "w-4 h-4")}
                                     <span>{button.label}</span>
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>

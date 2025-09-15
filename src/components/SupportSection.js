@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function SupportSection({ data }) {
     const { heading, description, supportOptions } = data
@@ -30,12 +30,12 @@ export default function SupportSection({ data }) {
                             <p className="text-gray-600  mb-6">
                                 {option.description}
                             </p>
-                            <Link
+                            <a
                                 href={option.link}
                                 className="text-primary-orange font-medium hover:underline"
                             >
                                 {option.linkText}
-                            </Link>
+                            </a>
                         </div>
                     ))}
                 </div>

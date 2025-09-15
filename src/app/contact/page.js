@@ -76,7 +76,7 @@ const contactHeroData = {
         },
         button: {
             text: 'EXPERIENCE OUR SUPPORT',
-            href: '/register'
+            href: 'https://client.jaazmarkets.com/register'
         }
     }
 }

@@ -154,18 +154,18 @@ const AllProducts = () => {
 
 
                         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-                            <Link href="/register" target="_blank" className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-orange to-orange-700 hover:from-primary-orange-dark hover:to-primary-orange text-white text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                            <a href="https://client.jaazmarkets.com/register" target="_blank" className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-orange to-orange-700 hover:from-primary-orange-dark hover:to-primary-orange text-white text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
                                 Start Trading Today
                                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
-                            </Link>
-                            <Link href="/demo" target="_blank" className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-gray-400 text-gray-300 text-lg font-semibold rounded-lg hover:bg-gray-400/10 hover:border-white hover:text-white transition-all transform hover:scale-105">
+                            </a>
+                            <a href="/demo" target="_blank" className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-gray-400 text-gray-300 text-lg font-semibold rounded-lg hover:bg-gray-400/10 hover:border-white hover:text-white transition-all transform hover:scale-105">
                                 Try Demo Account
                                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -312,12 +312,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">24/5</span>
                                 </div>
                             </div>
-                            <Link href="/trading/forex" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/forex" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Forex
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -350,12 +350,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">Global</span>
                                 </div>
                             </div>
-                            <Link href="/trading/stocks" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/stocks" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Stocks
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -388,12 +388,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">24/7</span>
                                 </div>
                             </div>
-                            <Link href="/trading/crypto" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/crypto" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Crypto
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -426,12 +426,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">24/5</span>
                                 </div>
                             </div>
-                            <Link href="/trading/indices" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/indices" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Indices
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -464,12 +464,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">24/5</span>
                                 </div>
                             </div>
-                            <Link href="/trading/metals" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/metals" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Metals
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
 
 
@@ -502,12 +502,12 @@ const AllProducts = () => {
                                     <span className="font-semibold text-gray-900 ">24/5</span>
                                 </div>
                             </div>
-                            <Link href="/trading/commodities" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                            <a href="/trading/commodities" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                                 Trade Commodities
                                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -580,18 +580,18 @@ const AllProducts = () => {
                             Join thousands of traders who choose Jazz Markets for professional trading conditions across all asset classes.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/register" target="_blank" className="inline-flex items-center px-8 py-4 bg-white text-primary-orange font-medium rounded-lg hover:bg-gray-100 transition text-lg">
+                            <a href="https://client.jaazmarkets.com/register" target="_blank" className="inline-flex items-center px-8 py-4 bg-white text-primary-orange font-medium rounded-lg hover:bg-gray-100 transition text-lg">
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
                                 Open Live Account
-                            </Link>
-                            <Link href="/demo" target="_blank" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary-orange transition text-lg">
+                            </a>
+                            <a href="/demo" target="_blank" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary-orange transition text-lg">
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 Try Demo Account
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

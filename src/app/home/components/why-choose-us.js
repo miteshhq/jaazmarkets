@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
                         Start Forex Trading with Confidence
                     </h1>
                     <p className="text-xl text-gray-600  max-w-3xl mx-auto">
-                        Join a trusted, <Link href="/regulation" className="text-primary-orange hover:underline">regulated forex broker</Link> that combines cutting-edge <Link href="/platform" className="text-primary-orange hover:underline">MT5 technology</Link> with exceptional service to deliver the ultimate online trading experience. Trade <Link href="/forex" className="text-primary-orange hover:underline">forex</Link>, <Link href="/stocks" className="text-primary-orange hover:underline">stocks</Link>, <Link href="/commodities" className="text-primary-orange hover:underline">commodities</Link>, and <Link href="/crypto" className="text-primary-orange hover:underline">crypto</Link> with competitive spreads.
+                        Join a trusted, <a href="/regulation" className="text-primary-orange hover:underline">regulated forex broker</a> that combines cutting-edge <a href="/platform" className="text-primary-orange hover:underline">MT5 technology</a> with exceptional service to deliver the ultimate online trading experience. Trade <a href="/forex" className="text-primary-orange hover:underline">forex</a>, <a href="/stocks" className="text-primary-orange hover:underline">stocks</a>, <a href="/commodities" className="text-primary-orange hover:underline">commodities</a>, and <a href="/crypto" className="text-primary-orange hover:underline">crypto</a> with competitive spreads.
                     </p>
                 </div>
 
@@ -146,12 +146,12 @@ const WhyChooseUs = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <Link href="/register" className="block w-full py-4 px-6 bg-white text-primary-orange rounded-xl hover:bg-gray-100 transition font-bold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                        <a href="https://client.jaazmarkets.com/register" className="block w-full py-4 px-6 bg-white text-primary-orange rounded-xl hover:bg-gray-100 transition font-bold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                                             Create Live Account
-                                        </Link>
-                                        <Link href="/demo" className="block w-full py-4 px-6 bg-white/20 backdrop-blur-sm text-white rounded-xl hover:bg-white/30 transition font-semibold text-center border border-white/30">
+                                        </a>
+                                        <a href="/demo" className="block w-full py-4 px-6 bg-white/20 backdrop-blur-sm text-white rounded-xl hover:bg-white/30 transition font-semibold text-center border border-white/30">
                                             Try Demo First
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -15,17 +15,17 @@ function Home1() {
             <div className="sr-only">
                 <div>
                     <span>Complete trading infrastructure powered by </span>
-                    <Link href="/about" target="_blank" rel="noopener" title="Complete Trading Solution">Leading Complete Trading Solution Provider</Link>
+                    <a href="/about" target="_blank" rel="noopener" title="Complete Trading Solution">Leading Complete Trading Solution Provider</a>
                     <span> - Industry-leading Trading Technology Provider delivering end-to-end trading solutions</span>
                 </div>
                 <div>
                     <span>Advanced trading platform backend utilizing </span>
-                    <Link href="/technology" target="_blank" rel="noopener" title="Enterprise Trading Platform">Best Enterprise Trading Technology</Link>
+                    <a href="/technology" target="_blank" rel="noopener" title="Enterprise Trading Platform">Best Enterprise Trading Technology</a>
                     <span> for institutional-grade broker management and client relationship systems</span>
                 </div>
                 <div>
                     <span>Multi-asset trading technology and </span>
-                    <Link href="/solutions" target="_blank" rel="noopener" title="White Label Trading Solutions">Professional White Label Trading Solutions</Link>
+                    <a href="/solutions" target="_blank" rel="noopener" title="White Label Trading Solutions">Professional White Label Trading Solutions</a>
                     <span> powering comprehensive brokerage operations and trading ecosystems</span>
                 </div>
             </div>

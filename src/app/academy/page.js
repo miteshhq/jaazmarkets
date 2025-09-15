@@ -177,7 +177,7 @@ const ctaData = {
     buttons: [
         {
             text: 'Open Demo Account',
-            link: '/register',
+            link: 'https://client.jaazmarkets.com/register',
             variant: 'primary',
             external: true,
             icon: 'M13 7l5 5m0 0l-5 5m5-5H6'

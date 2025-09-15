@@ -1,5 +1,5 @@
 "use client";
-import Link from 'next/link';
+import Link from "next/link";
 import { useState } from 'react';
 import {
     MapPin,
@@ -26,11 +26,11 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="sm:col-span-2 lg:col-span-1 order-1">
                         <div className="flex items-center mb-4 sm:mb-6">
-                            <Link href="/" className="flex items-center group">
+                            <a href="/" className="flex items-center group">
                                 <p className="px-0.5 text-lg sm:text-xl lg:text-2xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 transition-all duration-300">
                                     Jaaz Markets
                                 </p>
-                            </Link>
+                            </a>
                         </div>
                         <p className="text-gray-400 mb-6 text-sm sm:text-base leading-relaxed">
                             Your trusted forex broker with competitive spreads, fast execution, and world-class trading platforms. Trade with power, trade with Jaaz.
@@ -70,52 +70,52 @@ export default function Footer() {
                         <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-gray-200">Quick Links</h3>
                         <ul className="space-y-3 sm:space-y-4">
                             <li>
-                                <Link
+                                <a
                                     href="/about"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     About Us
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/platform/overview"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     MT5 Platform
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/trading/account-types"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Account Types
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/academy"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Education
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/partners"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Partner Program
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/contact"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Contact Us
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -125,52 +125,52 @@ export default function Footer() {
                         <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-gray-200">Legal</h3>
                         <ul className="space-y-3 sm:space-y-4">
                             <li>
-                                <Link
+                                <a
                                     href="/legal"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Legal Documents
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/legal/terms-conditions"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Terms &amp; Conditions
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/legal/privacy-policy"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Privacy Policy
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/legal/risk-disclosure"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Risk Disclosure
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/legal/aml-kyc-policy"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     AML/KYC Policy
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/trust/security"
                                     className="text-gray-400 hover:text-primary-orange transition-colors duration-300 text-sm sm:text-base focus:outline-none focus:underline focus:decoration-primary-orange hover:translate-x-1 inline-block transform"
                                 >
                                     Security
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>

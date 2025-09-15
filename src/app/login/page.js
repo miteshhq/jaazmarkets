@@ -128,7 +128,7 @@ export default function LoginPage() {
                     </div>
                 </div>
 
-                {/* Sign Up Link */}
+                {/* Sign Up a */}
                 <div className="text-center">
                     <span className="text-sm text-gray-600">
                         DONT HAVE AN ACCOUNT?{' '}

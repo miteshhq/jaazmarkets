@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function LegalCTA({ data }) {
     const { heading, description, buttons, backgroundColor } = data
@@ -12,14 +12,14 @@ export default function LegalCTA({ data }) {
                     <p className="text-lg text-gray-700 mb-8">{description}</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         {buttons.map((button, index) => (
-                            <Link
+                            <a
                                 key={index}
                                 href={button.href}
                                 target={button.target}
                                 className={`inline-block px-8 py-3 ${button.style} font-semibold rounded-lg transition`}
                             >
                                 {button.text}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>

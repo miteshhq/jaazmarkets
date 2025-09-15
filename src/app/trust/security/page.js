@@ -212,7 +212,7 @@ const ctaData = {
     buttons: [
         {
             text: 'Open Secure Account',
-            href: '/register',
+            href: 'https://client.jaazmarkets.com/register',
             variant: 'primary',
             icon: 'user',
         },

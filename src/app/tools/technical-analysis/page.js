@@ -8,7 +8,7 @@ const bannerProps = {
     buttons: [
         {
             text: "Start Trading",
-            link: "/register",
+            link: "https://client.jaazmarkets.com/register",
             variant: "primary",
             icon: "arrow"
         },
@@ -85,7 +85,7 @@ const ctaData = {
     buttons: [
         {
             text: "Open Live Account",
-            href: "/register",
+            href: "https://client.jaazmarkets.com/register",
             variant: "primary",
             icon: "user"
         },

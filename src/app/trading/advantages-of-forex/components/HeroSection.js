@@ -20,9 +20,9 @@ export default function HeroSection() {
                         <a href="#advantages" className="bg-primary-orange hover:bg-primary-orange/90 text-white px-8 py-4 rounded-lg font-semibold transition">
                             Explore Advantages
                         </a>
-                        <Link href="/trading/forex" className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition">
+                        <a href="/trading/forex" className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition">
                             Start Trading Forex
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

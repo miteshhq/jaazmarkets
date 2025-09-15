@@ -10,7 +10,7 @@ const bannerProps = {
     buttons: [
         {
             text: "Become a Partner",
-            link: "/register-partner",
+            link: "https://client.jaazmarkets.com/register-partner",
             variant: "primary",
             icon: "arrow"
         },
@@ -120,7 +120,7 @@ const partnershipTypesData = {
                 'Dedicated support'
             ],
             buttonText: 'Apply Now',
-            buttonLink: '/register-partner',
+            buttonLink: 'https://client.jaazmarkets.com/register-partner',
             buttonStyle: 'bg-primary-orange text-white hover:bg-primary-orange/90',
             featured: false
         },
@@ -197,7 +197,7 @@ const ctaData = {
     buttons: [
         {
             text: "Become a Partner",
-            href: "/register-partner",
+            href: "https://client.jaazmarkets.com/register-partner",
             variant: "primary",
             icon: "user"
         },

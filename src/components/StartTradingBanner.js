@@ -1,6 +1,6 @@
 import React from 'react'
 import BannerBackground from './BannerBackground'
-import Link from 'next/link'
+import Link from "next/link"
 import { Monitor, Download, Smartphone, ExternalLink, ArrowRight, Play } from 'lucide-react';
 
 const StartTradingBanner = (props) => {
@@ -22,7 +22,7 @@ const StartTradingBanner = (props) => {
     const defaultButtons = [
         {
             text: "Start Trading Today",
-            link: "/register",
+            link: "https://client.jaazmarkets.com/register",
             variant: "primary",
             icon: "arrow"
         },
@@ -177,7 +177,7 @@ const StartTradingBanner = (props) => {
                     {/* Dynamic Buttons */}
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
                         {buttons.map((button, index) => (
-                            <Link
+                            <a
                                 key={index}
                                 href={button.link}
                                 className={`group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl ${button.variant === 'primary'
@@ -187,7 +187,7 @@ const StartTradingBanner = (props) => {
                             >
                                 {button.text}
                                 {getButtonIcon(button.icon)}
-                            </Link>
+                            </a>
                         ))}
                     </div>
 

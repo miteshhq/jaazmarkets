@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 import { BookOpen, Calculator, Video, Download } from 'lucide-react'
 
 const iconMap = {
@@ -36,9 +36,9 @@ export default function LearningResources({ data }) {
                                     {resource.description}
                                 </p>
                                 {resource.link ? (
-                                    <Link href={resource.link} className="text-primary-orange font-semibold hover:underline">
+                                    <a href={resource.link} className="text-primary-orange font-semibold hover:underline">
                                         {resource.linkText}
-                                    </Link>
+                                    </a>
                                 ) : (
                                     <span className="text-gray-400 font-medium">
                                         {resource.status}

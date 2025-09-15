@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function SecuritySupport({ data }) {
     const { heading, description, supportOptions, buttons } = data
@@ -36,16 +36,16 @@ export default function SecuritySupport({ data }) {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         {buttons.map((button, index) => (
-                            <Link
+                            <a
                                 key={index}
                                 href={button.link}
                                 className={`px-8 py-4 rounded-lg font-semibold transition ${button.variant === 'primary'
-                                        ? 'bg-white text-primary-orange hover:bg-gray-100'
-                                        : 'border border-white/30 hover:bg-white/10 text-white'
+                                    ? 'bg-white text-primary-orange hover:bg-gray-100'
+                                    : 'border border-white/30 hover:bg-white/10 text-white'
                                     }`}
                             >
                                 {button.text}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>

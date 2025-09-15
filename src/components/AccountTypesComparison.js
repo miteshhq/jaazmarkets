@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 import { User, Zap, Star } from 'lucide-react'
 
 const iconMap = {
@@ -35,8 +35,8 @@ export default function AccountTypesComparison({ data }) {
                             <div
                                 key={index}
                                 className={`rounded-2xl p-8 border transition-shadow ${account.featured
-                                        ? 'bg-white  border-2 border-primary-orange shadow-lg relative hover:shadow-xl'
-                                        : 'bg-gray-50  border border-gray-200  hover:shadow-lg'
+                                    ? 'bg-white  border-2 border-primary-orange shadow-lg relative hover:shadow-xl'
+                                    : 'bg-gray-50  border border-gray-200  hover:shadow-lg'
                                     }`}
                             >
                                 {account.featured && (
@@ -89,16 +89,16 @@ export default function AccountTypesComparison({ data }) {
                                     ))}
                                 </ul>
 
-                                <Link
+                                <a
                                     href={account.buttonHref}
                                     target="_blank"
                                     className={`block w-full text-center py-3 px-4 rounded-lg transition font-medium ${account.featured
-                                            ? 'bg-primary-orange text-white hover:bg-primary-orange/90'
-                                            : `border ${account.buttonColor} ${account.buttonTextColor} hover:${account.buttonHoverBg} hover:text-white`
+                                        ? 'bg-primary-orange text-white hover:bg-primary-orange/90'
+                                        : `border ${account.buttonColor} ${account.buttonTextColor} hover:${account.buttonHoverBg} hover:text-white`
                                         }`}
                                 >
                                     {account.buttonText}
-                                </Link>
+                                </a>
                             </div>
                         )
                     })}

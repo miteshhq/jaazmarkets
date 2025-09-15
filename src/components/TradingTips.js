@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link"
 import React from 'react'
 
 export default function TradingTips({ data }) {
@@ -33,7 +33,7 @@ export default function TradingTips({ data }) {
                 </div>
                 {cta && (
                     <div className="text-center mt-8">
-                        <Link
+                        <a
                             href={cta.link}
                             className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-semibold rounded-lg hover:bg-primary-orange/90 transition"
                         >
@@ -41,7 +41,7 @@ export default function TradingTips({ data }) {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={cta.icon} />
                             </svg>
                             {cta.text}
-                        </Link>
+                        </a>
                     </div>
                 )}
             </div>

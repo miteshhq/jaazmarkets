@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link"
 import React from 'react'
 
 export default function TradingSpreadsTable({ data }) {
@@ -37,10 +37,10 @@ export default function TradingSpreadsTable({ data }) {
                                                 <td
                                                     key={idx}
                                                     className={`px-6 py-4 whitespace-nowrap text-sm ${idx === 0
-                                                            ? 'font-medium text-gray-900 '
-                                                            : idx === 1 || idx === 2
-                                                                ? 'text-primary-orange font-mono'
-                                                                : 'text-gray-900 '
+                                                        ? 'font-medium text-gray-900 '
+                                                        : idx === 1 || idx === 2
+                                                            ? 'text-primary-orange font-mono'
+                                                            : 'text-gray-900 '
                                                         }`}
                                                 >
                                                     {value}
@@ -59,12 +59,12 @@ export default function TradingSpreadsTable({ data }) {
                             <strong>Important Notice:</strong> {disclaimer}
                         </p>
                     </div>
-                    <Link
+                    <a
                         href={buttonHref}
                         className="inline-flex items-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition"
                     >
                         {buttonText}
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

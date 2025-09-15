@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
 import { User, Monitor, ArrowRight, DollarSign, ExternalLink, Download, Smartphone, Play, Search } from 'lucide-react';
 
 const StartTradingCTA = ({
@@ -8,7 +8,7 @@ const StartTradingCTA = ({
     buttons = [
         {
             text: "Open Live Account",
-            href: "/register",
+            href: "https://client.jaazmarkets.com/register",
             target: "_self",
             variant: "primary",
             icon: "user",
@@ -101,7 +101,7 @@ const StartTradingCTA = ({
                             const isPrimary = button.variant === 'primary';
 
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={button.href}
                                     target={button.target || "_self"}
@@ -112,7 +112,7 @@ const StartTradingCTA = ({
                                 >
                                     {getButtonIcon(button.icon)}
                                     {button.text}
-                                </Link>
+                                </a>
                             );
                         })}
                     </div>

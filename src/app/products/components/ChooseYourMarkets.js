@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from "next/link"
 
 const ChooseYourMarkets = () => {
     return (
@@ -50,12 +50,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">24/5</span>
                             </div>
                         </div>
-                        <Link href="/trading/forex" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/forex" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Forex
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -88,12 +88,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">Global</span>
                             </div>
                         </div>
-                        <Link href="/trading/stocks" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/stocks" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Stocks
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -126,12 +126,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">24/7</span>
                             </div>
                         </div>
-                        <Link href="/trading/crypto" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/crypto" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Crypto
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -164,12 +164,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">24/5</span>
                             </div>
                         </div>
-                        <Link href="/trading/indices" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/indices" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Indices
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -202,12 +202,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">24/5</span>
                             </div>
                         </div>
-                        <Link href="/trading/metals" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/metals" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Metals
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -240,12 +240,12 @@ const ChooseYourMarkets = () => {
                                 <span className="font-semibold text-gray-900 ">24/5</span>
                             </div>
                         </div>
-                        <Link href="/trading/commodities" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
+                        <a href="/trading/commodities" className="inline-flex items-center w-full justify-center px-6 py-3 bg-primary-orange text-white font-medium rounded-lg hover:bg-opacity-90 transition group-hover:shadow-md">
                             Trade Commodities
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

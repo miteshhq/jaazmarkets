@@ -8,7 +8,7 @@ export default function ClientLayout({ children }) {
   const pathname = usePathname();
 
   // Jaha Navbar/Footer nahi chahiye
-  const noLayoutRoutes = ["/login", "/signup"];
+  const noLayoutRoutes = ["/login", "/register"];
 
   const hideLayout = noLayoutRoutes.includes(pathname);
 
